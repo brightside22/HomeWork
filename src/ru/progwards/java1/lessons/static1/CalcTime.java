@@ -12,9 +12,8 @@ public class CalcTime {
 
     //1.2
     public static void printTime() {
-        double time = speed*distance;
-        System.out.println("Если ехать из " + cityFrom + " в " + cityTo + " со скоростью " +
-                speed + " км/ч, то " + distance + " км проедем за " + time + " часов.");
+        double time = distance / speed;
+        System.out.println("Если ехать из " + cityFrom + " в " + cityTo + " со скоростью " + speed + " км/ч, то " + distance + " км проедем за " + time + " часов.");
     }
 
 

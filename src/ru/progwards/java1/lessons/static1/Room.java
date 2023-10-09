@@ -10,11 +10,11 @@ public class Room {
 
 
     public static double square(double length, double width) {
-        return length1 * width1;
+        return length * width;
     }
 
     public static void printRoom(String name, double square) {
-        System.out.println("Площадь " + name + " составляет " + square + "м2");
+        System.out.println("Площадь " + name + " составляет " + square + " м2");
     }
 
 
