@@ -5,6 +5,13 @@ public class ReverseDigits {
         System.out.print((number % 10));
         System.out.print((number % 100 / 10));
         System.out.print((number / 100));
-        return number;
+        int num = number % 10 + number % 100 / 10 + number / 100;
+        return num;
     }
+
+    public static void main(String [] args) {
+        reverseDigits(843);
+    }
+
+
 }
