@@ -5,6 +5,10 @@ public class NumMetrics {
         return number = number/100 + number /10 % 10 + number % 10;
     }
     public static Integer mulDigits(Integer number) {
-        return number = number/100 * number /10 % 10 * number * 10;
+        return number = (number/100) * (number /10 % 10) * (number % 10);
+    }
+
+    public static void main(String[] args) {
+        System.out.println(mulDigits(762));
     }
 }
