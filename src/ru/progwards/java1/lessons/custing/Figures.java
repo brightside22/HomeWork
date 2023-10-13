@@ -10,8 +10,8 @@ public class Figures {
 
 
     public static double square(double n) {
-        double s = n * n;
-        return n;
+        double s = (n * n);
+        return s;
     }
 
 
@@ -31,6 +31,10 @@ public class Figures {
 
     public static double triangleVsCircle(double p) {
         return triangle(p) / circle(p);
+    }
+
+    public static void main(String[] args) {
+        System.out.println(square(75.98008903278891));
     }
 
 }
