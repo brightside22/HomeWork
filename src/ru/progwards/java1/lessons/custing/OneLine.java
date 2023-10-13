@@ -6,7 +6,7 @@ public class OneLine {
     private static String str;
 
     public static String strValue(String value) {
-        return str = "Передана строка со значением  " + value;
+        return str = "Передана строка со значением  " + "\"" + value + "\"";
     }
 
 
@@ -24,5 +24,8 @@ public class OneLine {
         return str = "Сумма " + n + " и " + m + " равна " + (n+m);
     }
 
+    public static void main(String[] args) {
+        System.out.println(strValue("Однажды, в студеную зимнюю пору"));
+    }
 
 }
