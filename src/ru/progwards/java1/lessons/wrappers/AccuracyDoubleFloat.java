@@ -4,6 +4,7 @@ public class AccuracyDoubleFloat {
     final static double PI = 3.14;
 
     public static Double volumeBallDouble(Double radius) {
+
         return radius = ((4 * PI * radius * radius * radius)/3);
     }
 
@@ -15,7 +16,4 @@ public class AccuracyDoubleFloat {
         return radius = volumeBallDouble(radius) - volumeBallFloat(radius.floatValue());
     }
 
-    public static void main(String[] args) {
-        System.out.println(calculateAccuracy(6371.2));
-    }
 }
