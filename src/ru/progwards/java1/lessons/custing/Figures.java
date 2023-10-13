@@ -34,7 +34,7 @@ public class Figures {
     }
 
     public static void main(String[] args) {
-        System.out.println(square(75.98008903278891));
+        System.out.println(triangleVsCircle(46.22767235170178));
     }
 
 }
