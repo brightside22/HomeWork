@@ -31,7 +31,4 @@ public class Figures {
         return triangle(p) / circle(p);
     }
 
-    public static void main(String[] args) {
-        System.out.println(square());
-    }
 }
