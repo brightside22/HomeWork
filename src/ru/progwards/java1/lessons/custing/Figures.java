@@ -14,9 +14,8 @@ public class Figures {
     }
 
     public static Double triangle(double k) {
-        double pp = (k + k + k) / 2;
-        double s = Math.sqrt(pp * (pp - k) * (pp - k) * (pp - k));
-        return s;
+        double halfP = k * 3 / 2;
+        return Math.sqrt(halfP * (halfP - k) * (halfP - k) * (halfP - k));
     }
 
     public static double squareVsTraiange(double p) {
