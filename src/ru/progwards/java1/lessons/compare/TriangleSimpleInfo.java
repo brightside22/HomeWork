@@ -20,8 +20,15 @@ public class TriangleSimpleInfo {
     public static int minSide(int a, int b, int c) {
             if (a < b & a < c)
                 return a;
-            if (b < a & b < c)
-                return b;
+        if (a <= b & a < c)
+            return a;
+        if (a < b & a <= c)
+            return a;
+
+        if (b < a & b < c)
+            return b;
+        if (b <= c)
+            return b;
             else
                 return c;
     }
