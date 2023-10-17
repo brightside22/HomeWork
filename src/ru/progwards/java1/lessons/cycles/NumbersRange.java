@@ -2,7 +2,7 @@ package ru.progwards.java1.lessons.cycles;
 
 public class NumbersRange {
     public static long sumNumbers(int start, int finish) {
-        int result = 0;
+        long result = 0;
         for (; start <= finish; start++) {
             result += start;
         }
@@ -18,7 +18,6 @@ public class NumbersRange {
         }
         return result;
     }
-
 
     public static long sumEvenIdx(int start, int finish) {
         long result = 0;
