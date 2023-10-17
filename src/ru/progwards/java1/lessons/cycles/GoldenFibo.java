@@ -1,5 +1,6 @@
 package ru.progwards.java1.lessons.cycles;
 
+
 public class GoldenFibo {
 
     public static int fiboNumber(int n) {
@@ -22,9 +23,8 @@ public class GoldenFibo {
         }
     }
 
-
     public static boolean isGoldenTriangle(int a, int b, int c) {
-        if (a == b || b == c || c == a) {
+        if (a == b && b == c && c == a) {
             double z = (double) a / c;
 
             if (z >= 1.61703 && z <= 1.61903) {
@@ -34,8 +34,6 @@ public class GoldenFibo {
 
         return false;
     }
-
-
 
     public static void main(String[] args) {
         System.out.println("Первые 15 чисел Фибоначчи:");
