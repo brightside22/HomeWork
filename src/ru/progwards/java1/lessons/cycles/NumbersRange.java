@@ -12,12 +12,13 @@ public class NumbersRange {
     public static long sumOdd(int start, int finish) {
         long result = 0;
         for (int i = 0; start + i <= finish; i++) {
-            if (start % 2 != 0 || (start + i) % 2 != 0) {
+            if ((start + i) % 2 != 0) {
                 result += start + i;
             }
         }
         return result;
     }
+
 
     public static long sumEvenIdx(int start, int finish) {
         long result = 0;

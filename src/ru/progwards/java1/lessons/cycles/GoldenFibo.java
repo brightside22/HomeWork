@@ -35,6 +35,8 @@ public class GoldenFibo {
         return false;
     }
 
+
+
     public static void main(String[] args) {
         System.out.println("Первые 15 чисел Фибоначчи:");
         for (int i = 1; i <= 15; i++) {
