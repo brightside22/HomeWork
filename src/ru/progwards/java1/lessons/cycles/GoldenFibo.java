@@ -24,8 +24,18 @@ public class GoldenFibo {
     }
 
     public static boolean isGoldenTriangle(int a, int b, int c) {
-        if (a == b || b == c || a==c) {
-            double z = (double) a / c;
+        if (a == b && b == c && a != 0) {
+            double z;
+
+            if (a == b) {
+                z = (double) a / c;
+            }
+            else if (b == c) {
+                z = (double) b / a;
+            }
+            else {
+                z = (double) a / b;
+            }
 
             if (z >= 1.61703 && z <= 1.61903) {
                 return true;
