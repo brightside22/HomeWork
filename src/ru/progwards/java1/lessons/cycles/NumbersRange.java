@@ -10,26 +10,23 @@ public class NumbersRange {
     }
 
     public static long sumOdd(int start, int finish) {
-        int result = 0;
-        for (; start <= finish; start++) {
-            if (start % 2 != 0)
-                result += start;
+        long result = 0;
+        for (int i = 0; start + i <= finish; i++) {
+            if ((start + i) % 2 != 0) {
+                result += start + i;
+            }
         }
         return result;
     }
 
+
     public static long sumEvenIdx(int start, int finish) {
-        int result = 0;
-        int x = start;
-
-        if (x % 2 != 0 || x == 1) {
-            for (; start <= finish; start++) {
-                if (start % 2 == 0)
-                    result += start;
+        long result = 0;
+        for (int i = 0; start + i <= finish; i++) {
+            if (i % 2 == 0) {
+                result += start + i;
             }
-            return result;
         }
-
         return result;
     }
 
