@@ -24,7 +24,7 @@ public class GoldenFibo {
     }
 
     public static boolean isGoldenTriangle(int a, int b, int c) {
-        if (a == b && b == c && a != 0) {
+        if (a == b || b == c || a == c) {
             double z;
 
             if (a == b) {
@@ -48,22 +48,15 @@ public class GoldenFibo {
 
 
     public static void main(String[] args) {
-        System.out.println("Первые 15 чисел Фибоначчи:");
         for (int i = 1; i <= 15; i++) {
             int result = fiboNumber(i);
-            System.out.print(result + " ");
-        }
-        System.out.println();
 
-        System.out.println("Золотые треугольники:");
+        }
+
         for (int i = 1; i <= 15; i++) {
             int base = fiboNumber(i);
             int num1 = fiboNumber(i + 1);
             int num2 = fiboNumber(i + 1);
-
-            if (base <= 100 && num1 <= 100 && num2 <= 100 && isGoldenTriangle(base, num1, num2)) {
-                System.out.println("Основание: " + base + ", Ребро 1: " + num1 + ", Ребро 2: " + num2);
-            }
         }
     }
 }
