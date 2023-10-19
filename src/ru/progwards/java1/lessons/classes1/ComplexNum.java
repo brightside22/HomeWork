@@ -14,7 +14,7 @@ public class ComplexNum {
 
 
     public String toString() {
-        return this.a + "+" + this.b + "i";
+        return a + "+" + b + "i"; //this.a
     }
 
 
@@ -33,8 +33,11 @@ public class ComplexNum {
     }
 
     public ComplexNum mul(ComplexNum num) {
-        int newA = this.a * num.a;
-        int newB = this.b * num.b;
+        //(a*c - b*d) + (b*c + a*d)i
+        // this.a = a num.a = c this.b= b num.b= d
+        int newA = (this.a * num.a - this.b * num.b);
+        int newB = (this.b*num.a + this.a*num.b);
+
 
         return new ComplexNum(newA, newB );
     }
@@ -44,6 +47,6 @@ public class ComplexNum {
         // ((b*c - a*d)/(c*c+d*d))i
         int newA = (this.a * num.a + this.b * num.b)/(num.a*num.a + num.b*num.b);
         int newB = (this.b*num.a - this.a*num.b)/(num.a*num.a + num.b*num.b);
-        return new ComplexNum(newA, newB );
+        return new ComplexNum(newA, newB);
     }
 }
