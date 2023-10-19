@@ -38,7 +38,6 @@ public class Count {
                 System.out.println("count равен 0");
                 break;
             }
-
         }
     }
 

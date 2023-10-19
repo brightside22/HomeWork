@@ -56,6 +56,8 @@ public class Time {
             result = sec - sec1;
             return result;
         }
+
+
         else {
             result = sec1 - sec;
             return result;
