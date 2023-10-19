@@ -43,6 +43,10 @@ public class Time {
     }
 
 
+    public int toSeconds() {
+        return this.hours * 3600 + this.minutes * 60 + this.seconds;
+    }
+
     public int secondsBetween(Time time) {
         int sec = hours * 3600 + minutes * 60 + seconds;
         int sec1 = this.hours * 3600 + this.minutes * 60 + this.seconds;
