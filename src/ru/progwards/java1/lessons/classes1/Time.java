@@ -53,10 +53,9 @@ public class Time {
         int result = 0;
 
         if (sec >= sec1) {
-            result = sec - sec1; }
-
-        else if (sec1 >= sec) {
-            result = sec1-sec; }
+            result = sec - sec1;
+        } else
+        { result = sec1-sec;}
 
         return result;
     }
