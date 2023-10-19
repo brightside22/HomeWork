@@ -31,9 +31,15 @@ public class Count {
     public static void main(String[] args) {
         Count count = new Count(10);
 
-        while (count.dec() == true) {
-            System.out.println("count равен 0");
-            break;
+        while (count.dec() != true) {
+
+            count.dec();
+
+            if (count.getCount() == 0) {
+                System.out.println("count равен 0");
+                break;
+            }
+
         }
     }
 
