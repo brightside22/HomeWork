@@ -33,8 +33,6 @@ public class Count {
 
         while (count.dec() != true) {
 
-            count.dec();
-
             if (count.getCount() == 0) {
                 System.out.println("count равен 0");
                 break;
