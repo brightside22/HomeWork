@@ -32,7 +32,6 @@ public class Count {
         Count count = new Count(10);
 
         while (count.dec() != true) {
-
             count.dec();
 
             if (count.getCount() == 0) {
