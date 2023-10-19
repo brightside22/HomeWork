@@ -54,11 +54,12 @@ public class Time {
 
         if (sec >= sec1) {
             result = sec - sec1;
-        } else
-        { result = sec1-sec;}
-
-        return result;
+            return result;
+        }
+        else {
+            result = sec1 - sec;
+            return result;
+        }
     }
-
 }
 
