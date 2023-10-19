@@ -14,7 +14,7 @@ public class ComplexNum {
 
 
     public String toString() {
-        return a + "+" + b + "i"; //this.a
+        return this.a + "+" + this.b + "i";
     }
 
 
