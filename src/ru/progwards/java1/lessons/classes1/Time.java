@@ -50,18 +50,11 @@ public class Time {
     public int secondsBetween(Time time) {
         int sec = hours * 3600 + minutes * 60 + seconds;
         int sec1 = this.hours * 3600 + this.minutes * 60 + this.seconds;
-        int result = 0;
 
         if (sec >= sec1) {
-            result = sec - sec1;
-            return result;
-        }
+            return sec - sec1;}
 
-
-        else {
-            result = sec1 - sec;
-            return result;
-        }
+        else {return sec1 - sec;}
     }
 }
 
