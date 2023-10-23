@@ -1,5 +1,6 @@
 package ru.progwards.java1.lessons.useclasses;
 
+
 public class CountTest {
 
     public static void testInc(int count) {
@@ -18,7 +19,7 @@ public class CountTest {
         Count count2 = new Count(count);
 
         while (count2.getCount() > 0) {
-            System.out.print(count2.getCount() + " ");
+            System.out.print((count2.getCount()-1) + " ");
             count2.dec();
         }
 
@@ -36,3 +37,4 @@ public class CountTest {
         testDec(-5);
     }
 }
+
