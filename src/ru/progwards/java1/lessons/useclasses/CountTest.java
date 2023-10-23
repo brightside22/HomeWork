@@ -13,17 +13,18 @@ public class CountTest {
         System.out.println("\nтест inc окончен");
     }
 
+
     public static void testDec(int count) {
-        Count count2 = new Count();
+        Count count2 = new Count(count);
 
-        while (true) {
-            count2.dec();
-            System.out.println(count2.getCount() + " ");
-
-            if (count2.dec())
-                System.out.println("count равен 0");
-            break;
+        while (count2.getCount() >= 0) {
+            System.out.print(count2.getCount() + " ");
+            if (count2.dec()) {
+                System.out.println("\ncount равен 0");
+                break;
+            }
         }
+
         System.out.println("тест dec окончен");
     }
 
