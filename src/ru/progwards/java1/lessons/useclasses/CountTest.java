@@ -7,10 +7,10 @@ public class CountTest {
 
         for (int i = 0; i < count; i++ ) {
             count1.inc();
-            System.out.print(count1.getCount() + " ");
+            System.out.println(count1.getCount() + " ");
         }
 
-        System.out.println("\nтест inc окончен");
+        System.out.println("тест inc окончен");
     }
 
 
