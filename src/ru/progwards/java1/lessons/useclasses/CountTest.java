@@ -19,14 +19,14 @@ public class CountTest {
 
         while (count2.getCount() > 0) {
             System.out.print(count2.getCount() + " ");
-            if (count2.dec()) {
-                break;
-            }
+            count2.dec();
         }
 
+        System.out.print(count2.getCount() + " ");
         System.out.println("\ncount равен 0");
         System.out.println("тест dec окончен");
     }
+
 
     public static void main(String[] args) {
         testInc(7);
