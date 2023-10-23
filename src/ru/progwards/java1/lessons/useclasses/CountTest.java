@@ -10,7 +10,7 @@ public class CountTest {
             System.out.print(count1.getCount() + " ");
         }
 
-        System.out.print("\nтест inc окончен");
+        System.out.println("\nтест inc окончен");
     }
 
 
