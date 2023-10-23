@@ -29,7 +29,7 @@ public class Count {
 
 
     public static void main(String[] args) {
-        ru.progwards.java1.lessons.classes1.Count count = new ru.progwards.java1.lessons.classes1.Count(10);
+       Count count = new Count(10);
 
         while (count.dec() != true) {
             count.dec();
