@@ -17,10 +17,10 @@ public class CountTest {
     public static void testDec(int count) {
         Count count2 = new Count(count);
 
-        while (count2.getCount() >= 0) {
+        while (true) {
             System.out.print(count2.getCount() + " ");
             if (count2.dec()) {
-                System.out.println("\ncount равен 0");
+                System.out.println("count равен 0");
                 break;
             }
         }
