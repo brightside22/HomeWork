@@ -22,8 +22,8 @@ public class CountTest {
             count2.dec();
         }
 
-        System.out.println("\ncount равен 0");
-        System.out.println("тест dec окончен");
+        System.out.print("\ncount равен 0");
+        System.out.println("\nтест dec окончен");
     }
 
 
