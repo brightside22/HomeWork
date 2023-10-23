@@ -18,7 +18,7 @@ public class CountTest {
         Count count2 = new Count(count);
 
         while (count2.getCount() > 0) {
-            System.out.print((count2.getCount()-1) + " ");
+            System.out.print(count2.getCount() + " ");
             count2.dec();
         }
 
