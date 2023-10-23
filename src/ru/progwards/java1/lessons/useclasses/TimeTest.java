@@ -20,10 +20,5 @@ public class TimeTest {
         System.out.println("разница между time0 и time1 равна " + time0.secondsBetween(time1));
         System.out.println("разница между time2 и time0 равна " + time2.secondsBetween(time0));
         System.out.println("разница между time1 и time2 равна " + time1.secondsBetween(time2));
-
-
     }
-
-
-
 }
