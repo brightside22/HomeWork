@@ -1,4 +1,4 @@
-package ru.progwards.java1.lessons.classes1;
+package ru.progwards.java1.lessons.useclasses;
 
 public class ComplexNum {
 
@@ -53,15 +53,3 @@ public class ComplexNum {
 
 
 
-class Boat {
-    String name;
-    int crew;
-    boolean hasMotor;
-
-    public Boat(String name, int crew, boolean hasmotor) {
-        this.name = name;
-        this.crew = crew;
-        this.hasMotor = hasMotor;
-    }
-
-}
