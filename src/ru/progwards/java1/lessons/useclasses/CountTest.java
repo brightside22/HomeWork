@@ -1,6 +1,4 @@
 package ru.progwards.java1.lessons.useclasses;
-
-
 public class CountTest {
 
     public static void testInc(int count) {
@@ -11,22 +9,20 @@ public class CountTest {
             System.out.print(count1.getCount() + " ");
         }
 
-        System.out.println("\nтест inc окончен");
+        System.out.println("тест inc окончен");
     }
-
 
     public static void testDec(int count) {
         Count count2 = new Count(count);
 
         while (count2.getCount() > 0) {
-            System.out.print((count2.getCount()-1) + " ");
+            System.out.print(count2.getCount() + " ");
             count2.dec();
         }
 
         System.out.println("\ncount равен 0");
         System.out.print("тест dec окончен");
     }
-
 
     public static void main(String[] args) {
         testInc(7);
@@ -37,4 +33,3 @@ public class CountTest {
         testDec(-5);
     }
 }
-
