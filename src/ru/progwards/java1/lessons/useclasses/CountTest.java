@@ -1,22 +1,26 @@
 package ru.progwards.java1.lessons.useclasses;
 public class CountTest {
 
+
     public static void testInc(int count) {
         Count count1 = new Count();
 
-        for (int i = 0; i < count; i++ ) {
+        for (int i = 0; i < count; i++) {
             count1.inc();
             System.out.print(count1.getCount() + " ");
         }
 
-        System.out.println("тест inc окончен");
+        System.out.println();
     }
+
+
+
 
     public static void testDec(int count) {
         Count count2 = new Count(count);
 
         while (count2.getCount() > 0) {
-            System.out.print(count2.getCount() + " ");
+            System.out.print((count2.getCount()-1) + " ");
             count2.dec();
         }
 
@@ -24,12 +28,21 @@ public class CountTest {
         System.out.print("тест dec окончен");
     }
 
+
     public static void main(String[] args) {
+
         testInc(7);
+        System.out.print("тест inc окончен");
         testInc(0);
+        System.out.print("тест inc окончен");
         testInc(-1);
+        System.out.print("тест inc окончен \n");
+
         testDec(9);
         testDec(0);
         testDec(-5);
     }
 }
+
+
+
