@@ -1,35 +1,37 @@
 package ru.progwards.java1.lessons.useclasses;
+
 public class CountTest {
     public static void testInc(int count) {
-        Count count1 = new Count();
-
+        Count counter = new Count();
         for (int i = 0; i < count; i++) {
-            count1.inc();
-            System.out.print(count1.getCount() + " ");
+            counter.inc();
+            System.out.print(counter.getCount() + " ");
         }
-
-        System.out.println("\nтест inc окончен");
     }
 
     public static void testDec(int count) {
-        Count count2 = new Count(count);
+        Count counter = new Count(count);
+        while (true) {
+            System.out.print(counter.getCount()-1 + " ");
+            if (counter.getCount()-1==0){
+                System.out.print("\ncount равен 0");
+                break;
+            }
 
-        while (count2.getCount() >= 0) {
-            System.out.print(count2.getCount() + " ");
-            count2.dec();
+            if (counter.dec()) {
+                break;
+            }
         }
-
-        System.out.println(count2.getCount() + " ");
-        System.out.println("count равен 0");
-        System.out.println("тест dec окончен");
+        System.out.print("\nтест dec окончен");
     }
 
     public static void main(String[] args) {
         testInc(7);
+        System.out.print("\nтест inc окончен\n");
         testInc(0);
+        System.out.print("тест inc окончен\n");
         testInc(-1);
-        System.out.println();
-
+        System.out.print("тест inc окончен\n");
         testDec(9);
         testDec(0);
         testDec(-5);
