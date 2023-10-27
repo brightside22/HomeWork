@@ -1,5 +1,4 @@
 package ru.progwards.java1.lessons.useclasses;
-
 public class CountTest {
     public static void testInc(int count) {
         Count counter = new Count();
@@ -12,12 +11,13 @@ public class CountTest {
     public static void testDec(int count) {
         Count counter = new Count(count);
         while (true) {
+            counter.dec();
             System.out.print(counter.getCount()-1 + " ");
             if (counter.getCount()==0){
                 System.out.print("\ncount равен 0");
                 break;
             }
-            if (counter.dec()) {
+            else if (counter.dec()) {
                 break;
             }
         }
@@ -32,6 +32,8 @@ public class CountTest {
         System.out.print("тест inc окончен\n");
         testInc(-1);
         System.out.print("тест inc окончен\n");
+
+
         testDec(9);
         testDec(0);
         testDec(-5);
