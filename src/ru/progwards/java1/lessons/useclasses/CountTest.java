@@ -11,18 +11,16 @@ public class CountTest {
     public static void testDec(int count) {
         Count counter = new Count(count);
         while (true) {
-            counter.dec();
             System.out.print(counter.getCount() + " ");
-            if (counter.getCount()==0){
-                System.out.print("\ncount равен 0");
-                break;
-            }
-            else if (counter.dec()) {
+            if (counter.dec()) {
                 break;
             }
         }
-        System.out.println("\nтест dec окончен");
+        System.out.println();
+        System.out.println("count равен 0");
+        System.out.println("тест dec окончен");
     }
+
 
 
     public static void main(String[] args) {
