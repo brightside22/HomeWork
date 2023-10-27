@@ -12,7 +12,7 @@ public class CountTest {
         Count counter = new Count(count);
         while (true) {
             counter.dec();
-            System.out.print(counter.getCount()-1 + " ");
+            System.out.print(counter.getCount() + " ");
             if (counter.getCount()==0){
                 System.out.print("\ncount равен 0");
                 break;
