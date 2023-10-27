@@ -9,20 +9,20 @@ public class CountTest {
     }
 
     public static void testDec(int count) {
-    Count counter = new Count(count);
-    while (true) {
-        System.out.print(counter.getCount()-1 + " ");
-        if (counter.getCount() == 0) {
-            break;
-        }
+        Count count1 = new Count(count);
+        while (true) {
+            System.out.print(count1.getCount()-1 + " ");
+            if (count1.getCount() <= 0) {
+                break;
+            }
 
-        if (counter.dec()) {
-            System.out.print("\ncount равен 0");
-            break;
+            if (count1.dec()) {
+                System.out.print("\ncount равен 0");
+                break;
+            }
         }
+        System.out.println("\nтест dec окончен");
     }
-    System.out.println("\nтест dec окончен");
-}
 
 
 
