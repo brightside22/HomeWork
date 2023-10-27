@@ -17,13 +17,13 @@ public class CountTest {
                 System.out.print("\ncount равен 0");
                 break;
             }
-
             if (counter.dec()) {
                 break;
             }
         }
-        System.out.print("\nтест dec окончен");
+        System.out.println("\nтест dec окончен");
     }
+
 
     public static void main(String[] args) {
         testInc(7);
