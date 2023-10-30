@@ -1,11 +1,11 @@
 package ru.progwards.java1.lessons.inheritance;
 
-class ZonedTime extends Time {
-    private TimeZone zone;  // часовой пояс
+
+public class ZonedTime extends Time {
+    public TimeZone zone;
 
     public ZonedTime(int hours, int minutes, int seconds) {
         super(hours, minutes, seconds);
-        this.zone = new TimeZone(0);
     }
 
     public ZonedTime(int hours, int minutes, int seconds, TimeZone zone) {
@@ -18,14 +18,24 @@ class ZonedTime extends Time {
     }
 
     public int secondsBetween(Time time) {
-        int totalSeconds = super.secondsBetween(time);
-        TimeZone otherTimeZone = getTimeZone();
-        if (otherTimeZone != null) {
-            int secondsDiff = (zone.hours - otherTimeZone.hours) * 3600 + (zone.minutes - otherTimeZone.minutes) * 60;
-            totalSeconds += secondsDiff;
+        int tmz = 0;
+        int tmz1 = 0;
+
+
+        if (zone != null) {
+            tmz = zone.getHours()  *  3600 + zone.getMinutes()  *  60;
         }
-        return totalSeconds;
+
+        int sec = ((TimeZone.getHours() * 3600) + (TimeZone.getMinutes() * 60) + ZonedTime.seconds) - tmz;
+        int sec1 = ZonedTime.hours *  3600 + ZonedTime.minutes  *  60 + ZonedTime.seconds;
+
+        if (sec >= sec1) {
+            return sec - sec1;
+        } else {
+            return sec1 - sec;
+        }
     }
+//54341
 
     public static void main(String[] args) {
         ZonedTime zt1 = new ZonedTime(5, 5, 27, new TimeZone(1, 34));
