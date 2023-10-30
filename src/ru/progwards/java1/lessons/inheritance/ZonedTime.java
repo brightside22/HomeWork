@@ -24,7 +24,7 @@ public class ZonedTime extends Time {
         }
         int time1Seconds = this.getHours() * 3600 + this.getMinutes() * 60 + this.getSeconds() - timeZoneOffset;
         int time2Seconds = time.getHours() * 3600 + time.getMinutes() * 60 + time.getSeconds();
-        return Math.abs(time1Seconds - time2Seconds);
+        return (time2Seconds - time1Seconds);
     }
 
 
