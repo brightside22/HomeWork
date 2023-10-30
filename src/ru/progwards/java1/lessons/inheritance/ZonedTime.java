@@ -26,8 +26,8 @@ public class ZonedTime extends Time {
             tmz = zone.getHours()  *  3600 + zone.getMinutes()  *  60;
         }
 
-        int sec = ((TimeZone.getHours() * 3600) + (TimeZone.getMinutes() * 60) + ZonedTime.seconds) - tmz;
-        int sec1 = ZonedTime.hours *  3600 + ZonedTime.minutes  *  60 + ZonedTime.seconds;
+        int sec = ((TimeZone.getHours() * 3600) + (TimeZone.getMinutes() * 60) + ZonedTime.seconds);
+        int sec1 = ZonedTime.hours *  3600 + ZonedTime.minutes  *  60 + ZonedTime.seconds - tmz;
 
         if (sec >= sec1) {
             return sec - sec1;
