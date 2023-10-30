@@ -25,8 +25,6 @@ public class CountTest {
     }
 
 
-
-
     public static void main(String[] args) {
         testInc(7);
         System.out.print("\nтест inc окончен\n");
