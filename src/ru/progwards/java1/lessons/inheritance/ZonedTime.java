@@ -5,7 +5,6 @@ public class ZonedTime extends Time {
 
     public ZonedTime(int hours, int minutes, int seconds) {
         super(hours, minutes, seconds);
-        this.zone = new TimeZone(0);
     }
 
     public ZonedTime(int hours, int minutes, int seconds, TimeZone zone) {
@@ -18,19 +17,25 @@ public class ZonedTime extends Time {
     }
 
     public int secondsBetween(Time time) {
-        int timeZoneOffset = 0;
-        if (zone != null) {
-            timeZoneOffset = zone.getHours() * 3600 + zone.getMinutes() * 60;
+            int tmz = 0;
+            if (zone != null) {
+                tmz = zone.getHours() * 3600 + zone.getMinutes() * 60;
+            }
+
+
+            int sec = TimeZone.getHours() * 3600 + TimeZone.getMinutes() * 60 - tmz;
+            int sec1 = ZonedTime.hours * 3600 + ZonedTime.minutes * 60 + ZonedTime.seconds ;
+
+            if (sec >= sec1) {
+                return sec - sec1;}
+
+            else {return sec1 - sec;}
         }
-        int time1Seconds = this.getHours() * 3600 + this.getMinutes() * 60 + this.getSeconds() - timeZoneOffset;
-        int time2Seconds = time.getHours() * 3600 + time.getMinutes() * 60 + time.getSeconds();
-        return (time2Seconds - time1Seconds);
-    }
 
 
     public static void main(String[] args) {
-        ZonedTime zt1 = new ZonedTime(15, 44, 3, new TimeZone(-1, 44));
-        Time t1 = new Time(17, 25, 1);
-        System.out.println(zt1.secondsBetween(t1));
+        ZonedTime zt1 = new ZonedTime(20, 50, 11, new TimeZone(-3));
+        ZonedTime zt2 = new ZonedTime(15, 52, 32, new TimeZone(-3));
+        System.out.println(zt1.secondsBetween(zt2));
     }
 }
