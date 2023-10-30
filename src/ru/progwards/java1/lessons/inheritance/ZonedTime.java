@@ -9,6 +9,7 @@ public class ZonedTime extends Time {
 
     public ZonedTime(int hours, int minutes, int seconds, TimeZone zone) {
         super(hours, minutes, seconds);
+        this.zone = zone;
     }
 
     public TimeZone getTimeZone() {
