@@ -6,6 +6,7 @@ public class TimeZone {
 
     public TimeZone(int hours) {
         this.hours = hours;
+        this.minutes = 0;
     }
 
     public TimeZone(int hours, int minutes) {
@@ -17,5 +18,11 @@ public class TimeZone {
         return null;
     }
 
+    public int getHours() {
+        return hours;
+    }
 
+    public int getMinutes() {
+        return minutes;
+    }
 }

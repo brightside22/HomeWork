@@ -56,5 +56,18 @@ public class Time {
 
         else {return sec1 - sec;}
     }
+
+    public int getSeconds() {
+        return seconds;
+    }
+
+
+    public int getHours() {
+        return hours;
+    }
+
+    public int getMinutes() {
+        return minutes;
+    }
 }
 
