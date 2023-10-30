@@ -1,8 +1,7 @@
 package ru.progwards.java1.lessons.inheritance;
 
-
 class ZonedTime extends Time {
-    private TimeZone zone;
+    private TimeZone zone;  // часовой пояс
 
     public ZonedTime(int hours, int minutes, int seconds) {
         super(hours, minutes, seconds);
@@ -18,20 +17,19 @@ class ZonedTime extends Time {
         return zone;
     }
 
-
     public int secondsBetween(Time time) {
-        int seconds = super.secondsBetween(time);
-        if (zone != null) {
-            seconds += zone.hours * 3600 + zone.minutes * 60;
+        int totalSeconds = super.secondsBetween(time);
+        TimeZone otherTimeZone = getTimeZone();
+        if (otherTimeZone != null) {
+            int secondsDiff = (zone.hours - otherTimeZone.hours) * 3600 + (zone.minutes - otherTimeZone.minutes) * 60;
+            totalSeconds += secondsDiff;
         }
-        return seconds;
+        return totalSeconds;
     }
-
 
     public static void main(String[] args) {
         ZonedTime zt1 = new ZonedTime(5, 5, 27, new TimeZone(1, 34));
         Time t1 = new Time(18, 37, 8);
         System.out.println(zt1.secondsBetween(t1));
     }
-
 }
