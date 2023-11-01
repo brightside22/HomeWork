@@ -37,8 +37,5 @@ class ZonedTime extends Time {
     public static void main(String[] args) {
         ZonedTime zt1 = new ZonedTime(22, 39, 45, new TimeZone(-3, 20));
         Time t1 = new Time(14, 17, 11);
-        System.out.println(zt1.secondsBetween(t1));
-        System.out.println(t1);
-        System.out.println(zt1);
     }
 }
