@@ -1,17 +1,19 @@
 package ru.progwards.java1.lessons.inheritance;
 
 class ZonedTime extends Time {
-    private TimeZone zone;
+    TimeZone zone;
+
 
     public ZonedTime(int hours, int minutes, int seconds) {
         super(hours, minutes, seconds);
-        this.zone = new TimeZone(0);
+        TimeZone zone = new TimeZone(0);
     }
 
     public ZonedTime(int hours, int minutes, int seconds, TimeZone zone) {
         super(hours, minutes, seconds);
         this.zone = zone;
     }
+
 
     public TimeZone getTimeZone() {
         return zone;
@@ -21,13 +23,14 @@ class ZonedTime extends Time {
     public int secondsBetween(Time time) {
         TimeZone t = getTimeZone();
 
-        int sec1 = super.secondsBetween(time);
-        int sec2 = t.getHours() * 3600 + t.getMinutes() * 60;
+        int sec = ZonedTime.hours * 3600 + ZonedTime.minutes * 60 +
+                ZonedTime.seconds - TimeZone.hours * 3600 - TimeZone.minutes * 60;
+        int sec1 = Time.hours * 3600 + Time.minutes * 60 + Time.seconds;
 
-        if (sec2 >= sec1) {
-            return sec2 - sec1;
+        if (sec >= sec1) {
+            return sec - sec1;
         } else {
-            return sec1 - sec2;
+            return sec1 - sec;
         }
     }
 
@@ -37,6 +40,5 @@ class ZonedTime extends Time {
         System.out.println(zt1.secondsBetween(t1));
         System.out.println(t1);
         System.out.println(zt1);
-        System.out.println(zt1.getTimeZone());
     }
 }
