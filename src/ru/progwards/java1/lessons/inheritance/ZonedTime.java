@@ -1,12 +1,10 @@
 package ru.progwards.java1.lessons.inheritance;
 
-class ZonedTime extends Time {
-    TimeZone zone;
-
+public class ZonedTime extends Time {
+    public static TimeZone zone;
 
     public ZonedTime(int hours, int minutes, int seconds) {
         super(hours, minutes, seconds);
-        TimeZone zone = new TimeZone(0);
     }
 
     public ZonedTime(int hours, int minutes, int seconds, TimeZone zone) {
@@ -14,18 +12,21 @@ class ZonedTime extends Time {
         this.zone = zone;
     }
 
-
     public TimeZone getTimeZone() {
         return zone;
     }
 
-    @Override
     public int secondsBetween(Time time) {
-        TimeZone t = getTimeZone();
+        int tmz = 0;
+        int tmz1 = 0;
 
-        int sec = ZonedTime.hours * 3600 + ZonedTime.minutes * 60 +
-                ZonedTime.seconds - TimeZone.hours * 3600 - TimeZone.minutes * 60;
-        int sec1 = Time.hours * 3600 + Time.minutes * 60 + Time.seconds;
+
+        if (zone != null) {
+            tmz = zone.getHours()  *  3600 + zone.getMinutes()  *  60;
+        }
+
+        int sec = ((TimeZone.getHours() * 3600) + (TimeZone.getMinutes() * 60) + ZonedTime.seconds);
+        int sec1 = ZonedTime.hours *  3600 + ZonedTime.minutes  *  60 + ZonedTime.seconds - tmz ;
 
         if (sec >= sec1) {
             return sec - sec1;
@@ -33,9 +34,17 @@ class ZonedTime extends Time {
             return sec1 - sec;
         }
     }
+//54341
 
     public static void main(String[] args) {
-        ZonedTime zt1 = new ZonedTime(22, 39, 45, new TimeZone(-3, 20));
-        Time t1 = new Time(14, 17, 11);
+        ZonedTime zt1 = new ZonedTime(5, 5, 27, new TimeZone(1, 34));
+        Time t1 = new Time(18, 37, 8);
+        System.out.println(zt1.secondsBetween(t1));
+        System.out.println(zone.getHours());
+        System.out.println(ZonedTime.hours);
+        System.out.println(TimeZone.getHours());
+        System.out.println(zt1);
+        System.out.println(t1);
     }
 }
+

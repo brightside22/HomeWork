@@ -14,7 +14,19 @@ class TimeZone {
         this.minutes = minutes;
     }
 
+    public static int getMinutes() {
+        return minutes;
+    }
+
     public TimeZone getTimeZone() {
         return null;
+    }
+
+    public static int getHours() {
+        return hours;
+    }
+
+    public void setHours(int hours) {
+        this.hours = hours;
     }
 }
