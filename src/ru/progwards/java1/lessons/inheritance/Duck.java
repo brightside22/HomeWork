@@ -11,5 +11,4 @@ public class Duck extends Animal {
         return "кря-кря";
     }
 
-
 }
