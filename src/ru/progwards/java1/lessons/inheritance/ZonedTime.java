@@ -16,8 +16,6 @@ public class ZonedTime extends Time {
         return zone;
     }
 
-
-
     @Override
     public int secondsBetween(Time time) {
         int tmz1 = 0;
