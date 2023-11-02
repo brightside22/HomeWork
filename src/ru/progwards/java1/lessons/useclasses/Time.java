@@ -13,36 +13,6 @@ public class Time {
 
     }
 
-    public String toString() {
-        String str = null;
-        if (hours < 10 && minutes < 10 && seconds < 10) {
-            str = "0" + hours + ":" + "0" + minutes + ":" + "0" + seconds; }
-
-        else if (hours < 10 && minutes < 10) {
-            str = "0" + hours + ":" + "0" + minutes + ":" + seconds; }
-
-        else if (hours < 10 && seconds < 10) {
-            str = "0" + hours + ":" + minutes + ":" + "0" + seconds; }
-
-        else if (minutes < 10 && seconds < 10) {
-            str = hours + ":" + "0" + minutes + ":" + "0" + seconds; }
-
-        else if (hours < 10) {
-            str = "0" + hours + ":" + minutes + ":" + seconds; }
-
-        else if (minutes < 10) {
-            str = hours + ":" + "0" + minutes + ":" + seconds; }
-
-        else if (seconds < 10) {
-            str = hours + ":" + minutes + ":" + "0" + seconds; }
-
-        else if (hours >= 10 && minutes >= 10 && seconds >= 10) {
-            str = hours + ":" + minutes + ":" + + seconds; }
-
-        return str;
-    }
-
-
     public int toSeconds() {
         return this.hours * 3600 + this.minutes * 60 + this.seconds;
     }
@@ -57,4 +27,3 @@ public class Time {
         else {return sec1 - sec;}
     }
 }
-
