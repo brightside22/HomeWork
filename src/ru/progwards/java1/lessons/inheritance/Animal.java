@@ -10,6 +10,7 @@ public abstract class Animal {
 
     public abstract String say();
 
+
     public String toString() {
         return "Это " + kind() + " " + name;
     }

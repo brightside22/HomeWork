@@ -24,6 +24,5 @@ public class TestAnimal {
 
         hamster = new Hamster("Поликарп");
         printAnimal(hamster);
-
     }
 }

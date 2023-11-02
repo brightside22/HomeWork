@@ -8,7 +8,6 @@ public  class Hamster extends Animal {
     public String kind() {
         return "хомяк";
     }
-
     public String say() {
         return "хрум-хрум-хрум";
     }

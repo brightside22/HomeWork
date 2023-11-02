@@ -16,6 +16,7 @@ class TimeZone {
         return hours;
     }
 
+
     public int getMinutes() {
         return minutes;
     }
