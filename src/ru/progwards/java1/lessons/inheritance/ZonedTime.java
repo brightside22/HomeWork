@@ -21,8 +21,10 @@ public class ZonedTime extends Time {
     @Override
     public int secondsBetween(Time time) {
         int tmz1 = 0;
-        TimeZone timeZone = getTimeZone();
-        tmz1 = timeZone.getHours() *3600 + timeZone.getMinutes() *60;
+        if (zone != null) {
+            TimeZone timeZone = getTimeZone();
+            tmz1 = timeZone.getHours() * 3600 + timeZone.getMinutes() * 60;
+        }
 
             int sec = time.hours * 3600 + time.minutes * 60 + time.seconds;
             int sec1 = this.hours * 3600 + this.minutes * 60 + this.seconds - tmz1;
