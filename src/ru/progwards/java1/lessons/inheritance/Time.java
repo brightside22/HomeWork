@@ -1,9 +1,9 @@
 package ru.progwards.java1.lessons.inheritance;
 
 public class Time {
-    int hours;
-    int minutes;
-    int seconds;
+    static int hours;
+    static int minutes;
+    static int seconds;
 
     public Time(int hours, int minutes, int seconds) {
 
