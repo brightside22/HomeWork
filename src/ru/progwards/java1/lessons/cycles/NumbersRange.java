@@ -32,4 +32,5 @@ public class NumbersRange {
     public static void main(String[] args) {
         System.out.println(sumEvenIdx(1, 5));
     }
+
 }
