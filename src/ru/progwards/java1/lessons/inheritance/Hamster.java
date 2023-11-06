@@ -1,6 +1,7 @@
 package ru.progwards.java1.lessons.inheritance;
 
-public class Hamster extends Animal {
+
+public  class Hamster extends Animal {
     public Hamster(String name) {
         super(name);
     }
@@ -12,4 +13,5 @@ public class Hamster extends Animal {
     public String say() {
         return "хрум-хрум-хрум";
     }
+
 }

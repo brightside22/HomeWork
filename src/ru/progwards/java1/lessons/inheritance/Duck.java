@@ -4,11 +4,9 @@ public class Duck extends Animal {
     public Duck(String name) {
         super(name);
     }
-
     public String kind() {
         return "утка";
     }
-
     public String say() {
         return "кря-кря";
     }
