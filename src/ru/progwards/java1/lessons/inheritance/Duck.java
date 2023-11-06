@@ -1,7 +1,6 @@
 package ru.progwards.java1.lessons.inheritance;
 
-public abstract class Duck extends Animal {
-
+public class Duck extends Animal {
     public Duck(String name) {
         super(name);
     }
@@ -10,10 +9,7 @@ public abstract class Duck extends Animal {
         return "утка";
     }
 
-
     public String say() {
-        return  "кря-кря";
+        return "кря-кря";
     }
-
-
 }

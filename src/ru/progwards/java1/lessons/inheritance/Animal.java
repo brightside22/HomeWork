@@ -1,21 +1,18 @@
 package ru.progwards.java1.lessons.inheritance;
 
-public class Animal {
-    String name;
+public abstract class Animal {
+    private String name;
+
     public Animal(String name) {
         this.name = name;
     }
 
-    public String kind() {
-        return kind();
-    }
+    public abstract String kind();
 
-    public String say() {
-        return say();
-    }
+    public abstract String say();
 
+    @Override
     public String toString() {
-        return kind() + name;
+        return "Это " + kind() + " " + name;
     }
-
 }

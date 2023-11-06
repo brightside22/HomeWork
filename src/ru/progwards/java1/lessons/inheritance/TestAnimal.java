@@ -1,24 +1,29 @@
 package ru.progwards.java1.lessons.inheritance;
 
-public class TestAnimal {
+    public class TestAnimal {
         public static void printAnimal(Animal animal) {
-            System.out.println("Это " + animal.name + " " + animal.toString());
+            System.out.println("Это " + animal.toString() + " " + animal.say());
+        }
+
+        public static void main(String args) {
+            Animal cow = new Cow("Пеструшка");
+            printAnimal(cow);
+
+            cow = new Cow("Рыжая");
+            printAnimal(cow);
+
+            Animal duck = new Duck("Даша");
+            printAnimal(duck);
+
+            duck = new Duck("Маша");
+            printAnimal(duck);
+
+
+            Animal hamster = new Hamster("Акакий");
+            printAnimal(hamster);
+
+            hamster = new Hamster("Поликарп");
+            printAnimal(hamster);
+        }
     }
 
-
-    public void main(String[] args) {
-        Animal cow = new Animal("Пеструшка");
-        printAnimal(cow);
-        Animal horse = new Animal("Рыжая");
-        printAnimal(horse);
-        Animal duck = new Animal("Даша");
-        printAnimal(duck);
-        Animal goat = new Animal("Маша");
-        printAnimal(goat);
-        Animal hamster = new Animal("Акакий");
-        printAnimal(hamster);
-        Animal rabbit = new Animal("Поликарп");
-        printAnimal(rabbit);
-
-    }
-}
