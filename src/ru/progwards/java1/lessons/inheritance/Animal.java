@@ -36,20 +36,17 @@ public abstract class Animal {
     public boolean equals(Object o) {
         this.kind  = kind();
         this.name = name;
-        int compare = compare(o);
+        int compare = Double.compare(this.weight, weight);
 
 
 
-        if (this.name.equals((name)) == (this.weight.equals(weight))  || name.equals(kind.equals(name)) == kind.equals(kind()) )
+
+        if (name.equals(kind.equals(name)) == kind.equals(kind()) )
             return true;
         else
             return false;
     }
 
-    public static void main(String[] args) {
-        Object Duck = null;
-        System.out.println(equals(Duck));
-    }
 
     enum FoodKind {
         HAY,
