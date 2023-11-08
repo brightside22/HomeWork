@@ -65,6 +65,7 @@ public abstract class Animal {
         else if (getFoodKind().compareTo(FoodKind.CORN) == 0) {
             return price = 15; }
         return calculateFoodWeight() * price;
+
     }
 
 
