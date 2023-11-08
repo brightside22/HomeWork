@@ -48,7 +48,7 @@ public abstract class Animal {
     }
 
 
-    enum FoodKind {
+    public enum FoodKind {
         HAY,
         CORN,
     }

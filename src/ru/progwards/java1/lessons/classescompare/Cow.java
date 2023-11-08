@@ -17,6 +17,7 @@ public class Cow extends Animal {
     }
 
     public FoodKind getFoodKind() {
+
         return FoodKind.HAY;
     }
 
