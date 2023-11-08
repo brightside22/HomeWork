@@ -1,7 +1,5 @@
 package ru.progwards.java1.lessons.classescompare;
 
-import ru.progwards.java1.lessons.inheritance.Animal;
-
 public class Duck extends Animal {
     public Duck(String name) {
         super(name);
