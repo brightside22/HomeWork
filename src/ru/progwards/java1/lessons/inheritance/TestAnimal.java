@@ -9,7 +9,6 @@ public class TestAnimal {
         Cow cow = new Cow("Пеструшка");
         printAnimal(cow);
 
-
         cow = new Cow("Рыжая");
         printAnimal(cow);
 

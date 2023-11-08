@@ -14,5 +14,12 @@ public class Cow extends Animal {
         return "мууууууу";
     }
 
+    public FoodKind getFoodKind() {
+        return FoodKind.HAY;
+    }
+
+    public double getFoodCoeff() {
+        return 0.05;
+    }
 
 }

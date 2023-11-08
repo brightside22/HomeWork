@@ -10,4 +10,14 @@ public class Duck extends Animal {
     public String say() {
         return "кря-кря";
     }
+
+
+    public FoodKind getFoodKind() {
+        return FoodKind.CORN;
+    }
+
+    public double getFoodCoeff() {
+        return 0.04;
+    }
+
 }

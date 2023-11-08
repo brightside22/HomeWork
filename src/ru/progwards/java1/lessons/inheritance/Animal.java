@@ -1,7 +1,13 @@
 package ru.progwards.java1.lessons.inheritance;
 
+import static ru.progwards.java1.lessons.inheritance.Animal.FoodKind.CORN;
+import static ru.progwards.java1.lessons.inheritance.Animal.FoodKind.HAY;
+
 public abstract class Animal {
     private String name;
+    private double weight;
+    private String kind;
+
     public Animal(String name) {
         this.name = name;
     }
@@ -13,4 +19,59 @@ public abstract class Animal {
     public String toString() {
         return "Это " + kind() + " " + name;
     }
+
+    public void setWeight(double weight) {
+        this.weight = weight;
+    }
+
+    public double getWeight() {
+        return weight;
+    }
+
+    public int compareTo(Animal animal) {
+        return Double.compare(this.weight, animal.weight);
+    }
+
+
+    public boolean equals(Object o) {
+        this.kind  = kind();
+        this.name = name;
+        int compare = compare(o);
+
+
+
+        if (this.name.equals((name)) == (this.weight.equals(weight))  || name.equals(kind.equals(name)) == kind.equals(kind()) )
+            return true;
+        else
+            return false;
+    }
+
+    public static void main(String[] args) {
+        Object Duck = null;
+        System.out.println(equals(Duck));
+    }
+
+    enum FoodKind {
+        HAY,
+        CORN,
+    }
+
+    abstract public FoodKind getFoodKind();
+
+    abstract public double getFoodCoeff();
+
+    public double calculateFoodWeight() {
+        return getWeight() * getFoodCoeff();
+    }
+
+    public double calculateFoodPrice() {
+        int price = 0;
+        if (getFoodKind().compareTo(HAY) == 0) {
+            return price = 2; }
+        else if (getFoodKind().compareTo(CORN) == 0) {
+            return price = 15; }
+        return calculateFoodWeight() * price;
+    }
+
+
 }
