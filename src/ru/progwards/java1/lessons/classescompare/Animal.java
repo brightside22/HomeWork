@@ -9,6 +9,8 @@ public abstract class Animal {
         this.name = name;
     }
 
+
+
     public abstract String kind();
 
     public abstract String say();
