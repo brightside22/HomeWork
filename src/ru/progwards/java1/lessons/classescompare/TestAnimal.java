@@ -1,8 +1,6 @@
 package ru.progwards.java1.lessons.classescompare;
 
 
-import ru.progwards.java1.lessons.inheritance.Duck;
-import ru.progwards.java1.lessons.inheritance.Hamster;
 
 public class TestAnimal {
     public static void printAnimal(Animal animal) {
