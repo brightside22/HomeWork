@@ -13,6 +13,7 @@ public class Duck extends Animal {
         return "кря-кря";
     }
 
+
     public FoodKind getFoodKind() {
         return FoodKind.CORN;
     }

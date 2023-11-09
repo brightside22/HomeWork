@@ -37,16 +37,11 @@ public abstract class Animal {
         this.name = name;
         int compare = Double.compare(this.weight, weight);
 
-
-
-
         if (name.equals(kind.equals(name)) == kind.equals(kind()) )
             return true;
         else
             return false;
     }
-
-
 
     enum FoodKind {
         HAY,
