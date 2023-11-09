@@ -9,6 +9,7 @@ public abstract class Animal {
     private String kind;
 
 
+
     public Animal(String name) {
         this.name = name;
     }

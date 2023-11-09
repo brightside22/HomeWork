@@ -13,8 +13,6 @@ public class TestAnimal {
         System.out.println("Тест для Animal, Cow, Hamster, Duck");
         Cow cow = new Cow("глаша");
         printAnimal(cow);
-
-
     }
 
 }

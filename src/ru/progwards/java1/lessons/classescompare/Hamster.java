@@ -5,6 +5,7 @@ public class Hamster extends Animal {
         super(name);
     }
 
+
     public String kind() {
         return "хомяк";
     }
