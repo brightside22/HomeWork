@@ -1,6 +1,7 @@
 package ru.progwards.java1.lessons.classescompare;
 
 public abstract class Animal {
+
     private String name;
     private double weight;
 

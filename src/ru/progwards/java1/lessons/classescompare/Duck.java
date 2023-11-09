@@ -5,6 +5,7 @@ public class Duck extends Animal {
         super(name);
     }
 
+
     public String kind() {
         return "утка";
     }

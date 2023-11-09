@@ -6,6 +6,7 @@ public class TestAnimal {
     }
 
 
+
     public static void main(String[] args) {
         Cow cow = new Cow("Пеструшка");
         printAnimal(cow);
