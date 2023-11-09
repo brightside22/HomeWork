@@ -5,6 +5,7 @@ public class TestAnimal {
         System.out.println(animal.toString() + " - " + animal.say() + "!");
     }
 
+
     public static void main(String[] args) {
         Cow cow = new Cow("Пеструшка");
         printAnimal(cow);

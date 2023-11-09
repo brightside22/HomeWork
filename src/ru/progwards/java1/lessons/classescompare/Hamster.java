@@ -12,6 +12,7 @@ public class Hamster extends Animal {
     public String say() {
         return "хрум-хрум-хрум";
     }
+
     public FoodKind getFoodKind() {
         return FoodKind.CORN;
     }
