@@ -1,6 +1,6 @@
 package ru.progwards.java1.lessons.classescompare;
 
-public class Cow extends Animal {
+public class extends Animal {
     public Cow(String name) {
         super(name);
 
