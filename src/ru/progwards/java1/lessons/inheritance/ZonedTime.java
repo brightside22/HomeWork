@@ -36,8 +36,8 @@ public class ZonedTime extends Time {
 
 
         } else {
-            int sec = super.hours * 3600 + super.minutes * 60 + super.seconds + tmz;
-            int sec1 = this.hours * 3600 + this.minutes * 60 + this.seconds;
+            int sec = super.hours * 3600 + super.minutes * 60 + super.seconds;
+            int sec1 = this.hours * 3600 + this.minutes * 60 + this.seconds - tmz;
 
             if (sec >= sec1) {
                 return sec - sec1;
@@ -48,10 +48,11 @@ public class ZonedTime extends Time {
     }
 
     public static void main(String[] args) {
-        ZonedTime zt1 = new ZonedTime(14, 8, 45, new TimeZone(-2));
-        ZonedTime zt2 = new ZonedTime(11, 56, 38, new TimeZone(-2));
+        ZonedTime zt1 = new ZonedTime(20, 56, 0, new TimeZone(-1));
+        ZonedTime zt2 = new ZonedTime(12, 7, 20, new TimeZone(1));
         System.out.println(zt1.secondsBetween(zt2));
-    //22327
+       // 28120
+
 
        ZonedTime z1 = new ZonedTime(17, 34, 55, new TimeZone(0, 9));
        Time t1 = new Time(7, 39, 29);
