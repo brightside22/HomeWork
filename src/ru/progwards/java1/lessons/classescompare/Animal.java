@@ -58,10 +58,11 @@ public abstract class Animal {
     public double calculateFoodPrice() {
         int price = 0;
         if (getFoodKind().compareTo(FoodKind.HAY) == 0) {
-            return price = 2;
+             price = 2;
         }
+
         else if (getFoodKind().compareTo(FoodKind.CORN) == 0) {
-            return price = 15;
+             price = 15;
         }
         return calculateFoodWeight() * price;
 
