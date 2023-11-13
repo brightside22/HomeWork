@@ -11,7 +11,6 @@ package ru.progwards.java1.lessons.inheritance;
         this.seconds = seconds;
     }
 
-
       public int secondsBetween(Time time) {
         int sec = time.hours * 3600 + time.minutes * 60 + time.seconds;
         int sec1 = this.hours * 3600 + this.minutes * 60 + this.seconds;

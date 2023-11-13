@@ -24,11 +24,12 @@ class TimeZone {
         return minutes;
     }
 
+    public static int getHours() {
+        return hours;
+    }
+
     public TimeZone getTimeZone() {
         return null;
     }
 
-    public static int getHours() {
-        return hours;
-    }
 }
