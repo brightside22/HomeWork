@@ -34,10 +34,6 @@ public class ZonedTime extends Time {
     }
 
     public static void main(String[] args) {
-        ZonedTime zt1 = new ZonedTime(11, 39, 48, new TimeZone(-2));
-        ZonedTime zt2 = new ZonedTime(14, 48, 38, new TimeZone(-2));
-        System.out.println(zt1.secondsBetween(zt2));
-        // 3070
 
         ZonedTime z1 = new ZonedTime(17, 34, 55, new TimeZone(0, 9));
         Time t1 = new Time(7, 39, 29);
@@ -45,20 +41,6 @@ public class ZonedTime extends Time {
         //35186
 
 
-        ZonedTime zzt1 = new ZonedTime(19, 52, 2, new TimeZone(-2));
-        ZonedTime zzt2 = new ZonedTime(12, 0, 2, new TimeZone(2));
-        System.out.println(zzt1.secondsBetween(zzt2));
-        // 28320
-
-        ZonedTime ztt1 = new ZonedTime(20, 56, 0, new TimeZone(-1));
-        ZonedTime ztt2 = new ZonedTime(12, 7, 20, new TimeZone(1));
-        System.out.println(ztt1.secondsBetween(ztt2));
-        // 31720
-
-        ZonedTime zttt1 = new ZonedTime(7, 2, 41, new TimeZone(-2));
-        ZonedTime zttt2 = new ZonedTime(21, 1, 43, new TimeZone(-2));
-        System.out.println(zttt1.secondsBetween(zttt2));
-            //35942
 
     }
 }
