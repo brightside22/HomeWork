@@ -1,7 +1,7 @@
 package ru.progwards.java1.lessons.inheritance;
 class TimeZone {
-    static int hours;
-    static int minutes;
+    int hours;
+     int minutes;
 
     public TimeZone(int hours) {
         this.hours = hours;
@@ -19,13 +19,6 @@ class TimeZone {
 
     public void setHours(int hours) {
         this.hours = hours;
-    }
-    public static int getMinutes() {
-        return minutes;
-    }
-
-    public static int getHours() {
-        return hours;
     }
 
     public TimeZone getTimeZone() {

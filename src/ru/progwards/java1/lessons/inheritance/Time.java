@@ -1,15 +1,20 @@
 package ru.progwards.java1.lessons.inheritance;
 
   class Time {
-     static int hours;
-     static int minutes;
-      static int seconds;
+       int hours;
+       int minutes;
+       int seconds;
 
     public Time(int hours, int minutes, int seconds) {
         this.hours = hours;
         this.minutes = minutes;
         this.seconds = seconds;
     }
+
+
+      public int toSeconds() {
+          return hours * 3600 + minutes * 60 + seconds;
+      }
 
       public int secondsBetween(Time time) {
         int sec = time.hours * 3600 + time.minutes * 60 + time.seconds;
