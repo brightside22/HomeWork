@@ -71,11 +71,15 @@ public class Matrix {
         int a = 0;
         int b = 0;
         for (int i = 0; i < matrix.length; i++) {
-            for (int j = 0; j < matrix.length; j++) {
+            for (int j = 0; j < matrix[i].length; j++) {
                 a = matrix[i][j];
                 b = matrix[i+1][j];
+                matrix[i+1][j] = a;
+                matrix[i][j]=b;
+
             }
         }
+        return matrix;
     }
 
  }
