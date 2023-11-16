@@ -9,9 +9,9 @@ public class Matrix {
 
     public int maxInRow(int num) {
         int min = 0;
-        for (int i = 0; i < matrix.length; i++) {
+        for (int i = 0; i < matrix[num].length; i++) {
             if (min < matrix[num][i])
-                min += matrix[num][i];
+                min = matrix[num][i];
         }
         return min;
     }
@@ -19,13 +19,14 @@ public class Matrix {
     public int maxInCol(int num) {
         int n = 0;
 
-
         for (int i = 0; i < matrix.length; i++) {
+            if (matrix!= null) {
                 if (matrix[i][num] > matrix[i + 1][num]) {
                     n = matrix[i][num];
                 } else if (matrix[i][num] < matrix[i + 1][num]) {
                     n = matrix[i][num];
                 }
+            }
         }
         return n;
     }
@@ -37,13 +38,17 @@ public class Matrix {
             for (int j = 0; j < matrix[i].length; j++) {
                 {
                     if (min < matrix[i][j])
-                        min += matrix[i][j];
+                        min = matrix[i][j];
                 }
             }
         }
         return min;
     }
-
+/*      -4  -8   5
+        -4  -4  -8
+         7  -4   0
+         6   3   8
+    Возвращенo: 12. Ожидалось: 8. */
 
     public boolean isMatrix() {
         int counter = 0;
