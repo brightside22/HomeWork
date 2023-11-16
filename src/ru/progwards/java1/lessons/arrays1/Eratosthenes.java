@@ -4,9 +4,7 @@ public class Eratosthenes {
     private boolean[] sieve;
 
     public Eratosthenes(int N) {
-        sieve = new boolean[N];
-
-
+        sieve = new boolean[N+1];
         for (int i = 2; i <= N; i++) {
             sieve[i] = true;
         }
@@ -16,12 +14,11 @@ public class Eratosthenes {
     }
 
     private void sift() {
-        for (int i = 2; i * i <= sieve.length-1; i++) {
+        for (int i = 2; i * i <= sieve.length; i++) {
 
             if (sieve[i]) {
 
-
-                for (int j = i * i; j <= sieve.length-1; j += i) {
+                for (int j = i * i; j <= sieve.length; j += i) {
                     sieve[j] = false;
                 }
 
