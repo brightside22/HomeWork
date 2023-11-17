@@ -26,7 +26,7 @@ public class Matrix {
     public int maxInCol(int num) {
         int max = matrix[0][num];
         for (int i = 1; i < matrix.length; i++) {
-            if (matrix[i][num] > max) {
+            if (matrix[i].length > num && matrix[i][num] > max) {
                 max = matrix[i][num];
             }
         }
