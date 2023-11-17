@@ -50,9 +50,11 @@ public class Matrix {
 
 
     public boolean isMatrix() {
-        for (int i = 0; i < matrix[i].length; i++) {
-            if (matrix.length != matrix[i].length) {
-                return false;
+        for (int i = 0; i < matrix.length; i++) {
+            for (int j = 1; j < matrix[i].length; j++) {
+                if (matrix[i].length != matrix[j].length) {
+                    return false;
+                }
             }
         }
         return true;
