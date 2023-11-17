@@ -24,7 +24,7 @@ public class Matrix {
     Возвращенo: 0. Ожидалось: -2. */
 
     public int maxInCol(int num) {
-        int max = matrix[0][num];
+        int max = 0;
         for (int i = 1; i < matrix.length; i++) {
             if (matrix[i].length > num && matrix[i][num] > max) {
                 max = matrix[i][num];
@@ -32,7 +32,6 @@ public class Matrix {
         }
         return max;
     }
-
 
 
     public int max() {
