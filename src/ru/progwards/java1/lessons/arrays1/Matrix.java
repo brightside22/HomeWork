@@ -50,7 +50,7 @@ public class Matrix {
 
 
     public boolean isMatrix() {
-        for (int i = 0; i < matrix.length; i++) {
+        for (int i = 0; i < matrix[i].length; i++) {
             if (matrix.length != matrix[i].length) {
                 return false;
             }
@@ -66,9 +66,9 @@ public class Matrix {
 
         for (int i = 0; i < matrix.length; i++) {
             for (int j = i + 1; j < matrix[i].length; j++) {
-                int temp = matrix[i][j];
+                int t = matrix[i][j];
                 matrix[i][j] = matrix[j][i];
-                matrix[j][i] = temp;
+                matrix[j][i] = t;
             }
         }
         return matrix;
