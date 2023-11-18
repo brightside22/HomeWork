@@ -14,6 +14,7 @@ public class IntArrays {
     }
 
 
+
     public static boolean equals1(int[] a1, int[] a2){
         int base1;
         int base2;
