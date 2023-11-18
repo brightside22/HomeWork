@@ -10,11 +10,9 @@ public class DIntArray {
     }
 
     public void add(int num) {
-        Arrays.copyOf(a, a.length+1);
-        for(int i = 0;  i <= a.length; i++) {
-            if (i == a.length) {
-                a[i] = num;
-            }
+        for(int i = a.length;  i <= a.length; i++) {
+            Arrays.copyOf(a, a.length+1);
+            a[i+1] = num;
         }
     }
 
@@ -41,4 +39,6 @@ public class DIntArray {
         Arrays.sort(a);
         return Arrays.binarySearch(a, pos);
     }
+
+
 }
