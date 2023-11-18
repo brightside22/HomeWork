@@ -6,7 +6,7 @@ public class DIntArray {
     private int[] a;
 
     private DIntArray(int[] a) {
-        this.a = a;
+        a = new int[0];
     }
 
     public void add(int num) {

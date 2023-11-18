@@ -19,31 +19,35 @@ public class IntArrays {
         int base2;
         boolean trfl = false;
 
-        for(int i = 1 ; i < a1.length; i++) {          //сортировка массива циклом
-            if (a1[i-1] > a1[i]) {
-                base1 = a1[i];
-                a1[i] = a1[i-1];
-                a1[i-1] = base1;
+        if (a1.length != a2.length)
+            return false;
+
+        else if( a1.length == a2.length)
+            for (int i = 1; i < a1.length; i++) {          //сортировка массива циклом
+                if (a1[i - 1] > a1[i]) {
+                    base1 = a1[i];
+                    a1[i] = a1[i - 1];
+                    a1[i - 1] = base1;
+                }
             }
-        }
 
-        for (int j = 1; j < a1.length; j++) {         //сортировка массива циклом
-            if (a2[j-1] > a2[j]) {
-                base2 = a2[j];
-                a2[j] = a2[j-1];
-                a2[j-1] = base2;
+            for (int j = 1; j < a1.length; j++) {         //сортировка массива циклом
+                if (a2[j - 1] > a2[j]) {
+                    base2 = a2[j];
+                    a2[j] = a2[j - 1];
+                    a2[j - 1] = base2;
+                }
             }
-        }
 
-        for(int ij = 0; ij < a1.length; ij++) {
-            if (a1[ij] == a2[ij])
-            trfl = true;
-            else
-            trfl = false;
-        }
+            for (int ij = 0; ij < a1.length; ij++) {
+                if (a1[ij] == a2[ij])
+                    trfl = true;
+                else
+                    trfl = false;
+            }
 
 
-        return trfl;
+            return trfl;
     }
 
 
