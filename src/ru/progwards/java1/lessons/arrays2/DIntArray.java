@@ -3,9 +3,10 @@ package ru.progwards.java1.lessons.arrays2;
 import java.util.Arrays;
 
 public class DIntArray {
-    private int[] a;
+    private  int[] a;
 
     public DIntArray() {
+        a = new int[0];
     }
 
     public void add(int num) {
