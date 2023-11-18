@@ -19,6 +19,7 @@ public class DIntArray {
     }
 
 
+
     public void atInsert(int pos, int num) {
         Arrays.copyOf(a, a.length + 1);
         for (int i = pos; i <= a.length; i++) {
