@@ -5,7 +5,7 @@ import java.util.Arrays;
 public class IntArrays {
     public static String toString(int []a) {
         String str = String.valueOf(a[0]);
-        for (int i = 0; i < a.length; i++) {
+        for (int i = 1; i < a.length; i++) {
             if ((a[i]) != 1) {
                 str += ", " + String.valueOf(a[i]);
             }
@@ -60,10 +60,7 @@ public class IntArrays {
 
 
     public static void main(String[] args) {
-        int[] aa =  {1, 2, 3, 4, 5} ;
-        System.out.println(toString(aa));
-
-        int[] a =  {1, 2, 3, 4, 45, 4,6, 5, 5} ;
+        int[] a =  {-12, 39, 45, -83, 85} ;
         System.out.println(toString(a));
 
 

@@ -5,7 +5,7 @@ import java.util.Arrays;
 public class DIntArray {
     private int[] a;
 
-    private DIntArray() {
+    public DIntArray() {
         a = new int[0];
     }
 
