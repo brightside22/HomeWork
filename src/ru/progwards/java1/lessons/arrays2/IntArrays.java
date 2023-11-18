@@ -10,7 +10,7 @@ public class IntArrays {
                 str += ", " + String.valueOf(a[i]);
             }
         }
-        return "[ " + str + " ]";
+        return "[" + str + "]";
     }
 
 
