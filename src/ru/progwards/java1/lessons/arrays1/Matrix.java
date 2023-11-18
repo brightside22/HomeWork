@@ -1,5 +1,7 @@
 package ru.progwards.java1.lessons.arrays1;
 
+import java.util.Arrays;
+
 public class Matrix {
     private int matrix[][];
 
@@ -59,8 +61,25 @@ public class Matrix {
         }
         return true;
     }
+    public int maxPlusMin(int[] a) {
+        if (a.length != 0 ) {
+            Arrays.sort(a);
+            int min = a[0];
+            int max = 0;
+            for (int i = 0; i< a.length; i++ ) {
+                if (max < a[i]) {
+                    max = a[i];
+                }
+            }
 
-
+          if (min == max)
+                return min;
+            else
+                return min + max;
+        }
+        else
+            return 0;
+    }
     public int[][] transposition() {
         if (!isMatrix()) {
             return null;
