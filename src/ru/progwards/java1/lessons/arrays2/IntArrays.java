@@ -6,9 +6,7 @@ public class IntArrays {
     public static String toString(int []a) {
         String str = String.valueOf(a[0]);
         for (int i = 1; i < a.length; i++) {
-            if ((a[i]) != a[0]) {
                 str += ", " + String.valueOf(a[i]);
-            }
         }
         return "[" + str + "]";
     }
@@ -68,6 +66,10 @@ public class IntArrays {
         System.out.println(toString(a));
         int[] a11 =  {-17, 51, 14, 2, 90, -47, 1, 28} ;
         System.out.println(toString(a11));
+
+        int[] a111 =  {11, 58, 41, 28, -62, -60, -89, -13, 66, 3, 60, -14, -29, -35, -4, -94, 11, 60} ;
+        System.out.println(toString(a111));
+
 
 
         int[] a1 = {-100, -37, -34, -21, 16, 30, 31, 47, 81, 96} ;

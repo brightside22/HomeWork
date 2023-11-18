@@ -7,24 +7,28 @@ public class DIntArray {
     private int[] a;
 
     public DIntArray() {
-        a = new int[0];
+        this.a = new int [0];
     }
-
     public void add(int num) {
-        int[] newArray = new int[a.length + 1];
-        System.arraycopy(a, 0, newArray, 0, a.length);
-        newArray[a.length] = num;
-        a = newArray;
+        int[] ad = Arrays.copyOf(a, a.length + 1);
+        for (int i = 0; i < a.length; i++) {
+            ad[i] = a[i];
+        }
+        ad[a.length] = num;
+        a = ad;
     }
 
 
 
     public void atInsert(int pos, int num) {
 
-        int[] aa = new int[a.length + 1];
-        System.arraycopy(a, 0, aa, 0, pos);
+        int[] aa = Arrays.copyOf(a, a.length + 1);
+
+        for (int i = aa.length - 1; i > pos; i--) {
+            aa[i] = aa[i - 1];
+        }
+
         aa[pos] = num;
-        System.arraycopy(a, pos, aa, pos + 1, a.length - pos);
         a = aa;
     }
 
@@ -32,8 +36,11 @@ public class DIntArray {
     public void atDelete(int pos) {
 
         int[] aa = new int[a.length - 1];
-        System.arraycopy(a, 0, aa, 0, pos);
-        System.arraycopy(a, pos + 1, aa, pos, a.length - pos - 1);
+        for (int i = 0, j = 0; i < a.length; i++) {
+            if (i != pos) {
+                aa[j++] = a[i];
+            }
+        }
         a = aa;
     }
 
