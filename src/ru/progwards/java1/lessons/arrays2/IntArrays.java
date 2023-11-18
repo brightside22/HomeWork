@@ -19,10 +19,10 @@ public class IntArrays {
         int base2;
         boolean trfl = false;
 
-        if (a1.length != a2.length)
-            return false;
-
-        else if( a1.length == a2.length)
+        if (a1.length != a2.length) {
+             trfl = false;
+        }
+        else {
             for (int i = 1; i < a1.length; i++) {          //сортировка массива циклом
                 if (a1[i - 1] > a1[i]) {
                     base1 = a1[i];
@@ -40,14 +40,17 @@ public class IntArrays {
             }
 
             for (int ij = 0; ij < a1.length; ij++) {
-                if (a1[ij] == a2[ij])
+                if (a2[ij] == a1[ij]) {
                     trfl = true;
-                else
-                    trfl = false;
+                    break;
+                } else {
+                    trfl = false; }
+                break;
+
             }
+        }
 
-
-            return trfl;
+        return trfl;
     }
 
 
@@ -63,9 +66,8 @@ public class IntArrays {
         int[] a =  {-12, 39, 45, -83, 85} ;
         System.out.println(toString(a));
 
-
-        int[] a1 = {1, 2, 3, 5, 4} ;
-        int[] a2 = {1, 3, 2, 4, 5} ;
+        int[] a1 = {-100, -37, -34, -21, 16, 30, 31, 47, 81, 96} ;
+        int[] a2 = {-37, -1, -34, -21, 16, 30, 31, 47, 81, 96} ;
         System.out.println(equals1(a1, a2));
         System.out.println(equals2(a1, a2));
 
