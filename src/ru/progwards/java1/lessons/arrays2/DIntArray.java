@@ -3,20 +3,16 @@ package ru.progwards.java1.lessons.arrays2;
 import java.util.Arrays;
 
 public class DIntArray {
-    private  int[] a;
+
+    private int[] a = new int[0];
 
     public DIntArray() {
-        a = new int[0];
     }
-
     public void add(int num) {
-        int[] ad = Arrays.copyOf(a, a.length + 1);   //добавляем в конец значение
-        for (int i = a.length; i < ad.length; i++){
-            ad[i+1] = num;
-        }
+        int[] ad = Arrays.copyOf(a, a.length + 1);
+        ad[ad.length - 1] = num;
         a = ad;
     }
-
 
 
     public void atInsert(int pos, int num) {
@@ -36,9 +32,15 @@ public class DIntArray {
     }
 
 
-    public int at(int pos)  {                 //- возвращает элемент по индексу pos
+    public  int at(int pos)  {                 //- возвращает элемент по индексу pos
         Arrays.sort(a);
         return Arrays.binarySearch(a, pos);
+    }
+
+
+    public static void main(String[] args) {
+        int[] a = {1, 2, 3, 4, 5, 6};
+
     }
 
 }
