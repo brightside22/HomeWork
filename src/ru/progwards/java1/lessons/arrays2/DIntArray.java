@@ -6,7 +6,6 @@ public class DIntArray {
     private int[] a;
 
     public DIntArray() {
-        a = new int[0];
     }
 
     public void add(int num) {
@@ -39,6 +38,5 @@ public class DIntArray {
         Arrays.sort(a);
         return Arrays.binarySearch(a, pos);
     }
-
 
 }
