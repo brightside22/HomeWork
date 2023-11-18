@@ -13,7 +13,7 @@ public class DIntArray {
         for (int i = 0; i < a.length; i++) {
             ad[i] = a[i];
         }
-        ad[a.length] = num;
+        ad[ad.length] = num;
         a = ad;
     }
 
