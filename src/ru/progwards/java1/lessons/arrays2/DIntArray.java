@@ -5,8 +5,8 @@ import java.util.Arrays;
 public class DIntArray {
     private int[] a;
 
-    private DIntArray(int[] a) {
-        this.a = new int[0];
+    private DIntArray() {
+        a = new int[0];
     }
 
     public void add(int num) {
@@ -37,7 +37,7 @@ public class DIntArray {
     }
 
 
-    public int at(int pos)  {                 //- возвращает элемент по индексу pos.
+    public int at(int pos)  {                 //- возвращает элемент по индексу pos
         Arrays.sort(a);
         return Arrays.binarySearch(a, pos);
     }
