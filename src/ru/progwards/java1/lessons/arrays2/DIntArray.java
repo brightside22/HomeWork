@@ -7,6 +7,7 @@ public class DIntArray {
     private int[] a;
 
     public DIntArray() {
+        a = new int[0];
     }
     public void add(int num) {
         int[] ad = Arrays.copyOf(a, a.length + 1);
