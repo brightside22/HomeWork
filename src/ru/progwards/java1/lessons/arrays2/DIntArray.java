@@ -13,8 +13,9 @@ public class DIntArray {
         int[] ad = Arrays.copyOf(a, a.length + 1);
         for (int i = 0; i < a.length; i++) {
             ad[i] = a[i];
-            ad[i + 1] = num;
         }
+        ad[a.length] = num;
+        a = ad;
     }
 
 
