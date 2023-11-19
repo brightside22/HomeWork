@@ -15,7 +15,7 @@ public class DIntArray {
         for (int i = 0; i < a.length; i++) {
             ad[i] = a[i];
         }
-        ad[ad.length] = num;
+        ad[ad.length-1] = num;
         a = ad;
     }
 
@@ -24,7 +24,7 @@ public class DIntArray {
     public void atInsert(int pos, int num) {            //добавляет элемент num в позицию pos
 
         int[] aa = Arrays.copyOf(a, a.length + 1);
-        for (int i = 0; i < a.length; i++ ) {
+        for (int i = pos; i < aa.length; i++ ) {
             aa[i] = a[i+1];
         }
         aa[pos] = num;
