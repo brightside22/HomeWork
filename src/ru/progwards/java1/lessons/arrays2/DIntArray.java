@@ -29,11 +29,11 @@ public class DIntArray {
     public void atDelete(int pos) {              //удаляет элемент в позиции pos массива
         int[] aa = new int[a.length - 1];
         for (int i = 0; i < pos; i++) {
-            aa[i] = a[i];
+            aa[i] = a[i];                       //  97,49,15,-30,89,   -86    ,-82,70,-72       5
         }
 
         for (int i = pos; i < aa.length; i++) {
-            aa[i-1] = a[i];
+            aa[i] = a[i+1];
         }
         a = aa;
     }
