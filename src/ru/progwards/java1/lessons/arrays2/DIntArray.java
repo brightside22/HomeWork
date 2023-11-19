@@ -44,7 +44,9 @@ public class DIntArray {
 
     public int at(int pos)  {                 //- возвращает элемент по индексу pos
         Arrays.sort(a);
-        return Arrays.binarySearch(a, pos);
+      int aaa = Arrays.binarySearch(a, pos);
+
+      return a[aaa];
     }
 }
 
