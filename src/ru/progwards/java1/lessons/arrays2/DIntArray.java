@@ -7,21 +7,21 @@ public class DIntArray {
     private int[] a;
 
     public DIntArray() {
-     a = new int [0];
+     a = new int [10];
     }
 
-    public void add(int num)  {
+    public void add(int num)  {                          //добавляет элемент num в конец массива
         int[] ad = Arrays.copyOf(a, a.length + 1);
         for (int i = 0; i < a.length; i++) {
             ad[i] = a[i];
         }
-        ad[a.length] = num;
+        ad[ad.length] = num;
         a = ad;
     }
 
 
 
-    public void atInsert(int pos, int num) {
+    public void atInsert(int pos, int num) {            //добавляет элемент num в позицию pos
 
         int[] aa = Arrays.copyOf(a, a.length + 1);
         for (int i = 0; i < a.length; i++ ) {
@@ -32,7 +32,7 @@ public class DIntArray {
     }
 
 
-    public void atDelete(int pos) {
+    public void atDelete(int pos) {              //удаляет элемент в позиции pos массива
 
         int[] aa = new int[a.length - 1];
         for (int i = pos; i < a.length; i++) {
@@ -46,8 +46,5 @@ public class DIntArray {
         Arrays.sort(a);
         return Arrays.binarySearch(a, pos);
     }
-
-
-
 }
 
