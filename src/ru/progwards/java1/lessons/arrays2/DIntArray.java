@@ -32,13 +32,14 @@ public class DIntArray {
         int[] aa = new int[a.length - 1];
         for (int i = pos; i < aa.length; i++) {
             aa[i] = a[i - 1];
-        }
-        a = aa;
+        } a = aa;
     }
 
 
     public int at(int pos) {
-        return a[pos];
+        if (pos >= 0 && pos < a.length) {
+            return a[pos];
+        } else return 000;
     }
 }
 
