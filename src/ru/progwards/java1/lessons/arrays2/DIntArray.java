@@ -18,10 +18,9 @@ public class DIntArray {
 
 
     public void atInsert(int pos, int num) {            //добавляет элемент num в позицию pos
-
         int[] aa = Arrays.copyOf(a, a.length + 1);
-        for (int i = pos + 2; i < aa.length; i++) {
-            aa[i - 1] = a[i];
+        for (int i = pos; i < a.length; i++) {
+            aa[i+1] = a[i];
         }
         aa[pos] = num;
         a = aa;
@@ -37,9 +36,7 @@ public class DIntArray {
 
 
     public int at(int pos) {
-        if (pos >= 0 && pos < a.length) {
-            return a[pos];
-        } else return 000;
+        return a[pos];
     }
 }
 

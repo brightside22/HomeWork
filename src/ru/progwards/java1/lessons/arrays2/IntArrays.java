@@ -52,7 +52,6 @@ public class IntArrays {
         return trfl;
     }
 
-
     public static boolean equals2(int[] a1, int[] a2) {
         Arrays.sort(a1);
         Arrays.sort(a2);
@@ -69,7 +68,6 @@ public class IntArrays {
 
         int[] a111 =  {11, 58, 41, 28, -62, -60, -89, -13, 66, 3, 60, -14, -29, -35, -4, -94, 11, 60} ;
         System.out.println(toString(a111));
-
 
 
         int[] a1 = {-100, -37, -34, -21, 16, 30, 31, 47, 81, 96} ;
