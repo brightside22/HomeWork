@@ -7,7 +7,7 @@ public class DIntArray {
     private int[] a;
 
     public DIntArray() {
-        a = new int[100];
+        a = new int[1];
     }
 
     public void add(int num) {               //добавляет элемент num в конец массива
@@ -31,6 +31,7 @@ public class DIntArray {
         for (int i = 0; i < pos; i++) {
             aa[i] = a[i];
         }
+
         for (int i = pos; i < aa.length; i++) {
             aa[i] = a[i + 1];
         }
