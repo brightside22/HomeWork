@@ -27,12 +27,10 @@ public class DIntArray {
 
 
     public void atDelete(int pos) {              //удаляет элемент в позиции pos массива
-        int[] aa = new int[a.length - 2];
-                                                     //   -50,-88,-50,-35,-79,59,91,20.     0
-        for (int i = 0; i < aa.length; i++) {
-            if (i >= pos) {
-                aa[i] = a[i+1];
-            } else { aa[i] = a[i]; }
+        int[] aa = Arrays.copyOf(a, a.length-1);
+                                                     //  1, 2, 3, 4
+        for (int i = pos; i < a.length; i++) {        // 1
+           aa[i] = a[i+1];
         }
         a = aa;
     }
