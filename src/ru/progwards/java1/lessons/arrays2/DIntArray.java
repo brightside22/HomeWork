@@ -27,10 +27,9 @@ public class DIntArray {
 
 
     public void atDelete(int pos) {              //удаляет элемент в позиции pos массива
-        int[] aa = Arrays.copyOf(a, a.length-1);
-                                                     //  1, 2, 3, 4
-        for (int i = pos; i < a.length; i++) {        // 1
-           aa[i] = a[i+1];
+        int[] aa = Arrays.copyOf(a, a.length - 1);
+        for (int i = pos; i < aa.length; i++) {
+            aa[i] = a[i+1];
         }
         a = aa;
     }
