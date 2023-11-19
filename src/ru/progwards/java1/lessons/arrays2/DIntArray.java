@@ -29,8 +29,8 @@ public class DIntArray {
 
     public void atDelete(int pos) {              //удаляет элемент в позиции pos массива
         int[] aa = new int[a.length - 1];
-        for (int i = pos; i < aa.length; i++) {
-            aa[i] = a[i - 1];
+        for (int i = pos; i < a.length; i++) {
+            aa[i-1] = a[i];
         } a = aa;
     }
 
