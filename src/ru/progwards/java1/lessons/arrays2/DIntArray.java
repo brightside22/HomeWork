@@ -33,7 +33,7 @@ public class DIntArray {
         }
 
         for (int i = pos; i < aa.length; i++) {
-            aa[i] = a[i + 1];
+            aa[i-1] = a[i];
         }
         a = aa;
     }
