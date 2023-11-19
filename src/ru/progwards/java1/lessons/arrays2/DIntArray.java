@@ -7,15 +7,14 @@ public class DIntArray {
     private int[] a;
 
     public DIntArray() {
-        a = new int[10];
+        a = new int[100];
     }
 
     public void add(int num) {               //добавляет элемент num в конец массива
-        int[] ad = Arrays.copyOf(a, a.length + 1);
-        ad[a.length] = num;
-        a = ad;
+        int[] aa = Arrays.copyOf(a, a.length + 1);
+        aa[a.length] = num;
+        a = aa;
     }
-
 
     public void atInsert(int pos, int num) {            //добавляет элемент num в позицию pos
         int[] aa = Arrays.copyOf(a, a.length + 1);
@@ -40,7 +39,7 @@ public class DIntArray {
 
 
 
-    public int at(int pos) {
+    public int at(int pos) { //возврат элемента по позиции
         return a[pos];
     }
 }
