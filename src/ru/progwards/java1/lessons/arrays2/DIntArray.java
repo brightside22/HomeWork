@@ -7,7 +7,7 @@ public class DIntArray {
     private int[] a;
 
     public DIntArray() {
-        a = new int[1];
+        a = new int[0];
     }
 
     public void add(int num) {               //добавляет элемент num в конец массива
@@ -26,13 +26,50 @@ public class DIntArray {
     }
 
 
-    public void atDelete(int pos) {              //удаляет элемент в позиции pos массива
+    public void atDelete(int pos) {                    //удаляет элемент в позиции pos массива
         int[] aa = Arrays.copyOf(a, a.length - 1);
-        for (int i = pos; i < aa.length; i++) {
-            aa[i] = a[i+1];
-        }
-        a = aa;
+
+            for (int i = pos; i < aa.length; i++) {
+                aa[i] = a[i + 1];
+            }
+            a = aa;
+
     }
+
+
+    public interface Speaking {
+        public String say();
+    }
+
+    public class Dog implements Speaking {
+        public String say() {
+            return "Гав";
+        }
+    }
+
+    public class Goat implements Speaking {
+        public String say() {
+            return "Мее";
+        }
+    }
+
+    public interface Comparable<T> {
+        public int compareTo(T o);
+    }
+
+    public class Num implements Comparable<Num> {
+        public int num;
+        Num(int num) {
+            this.num = num;
+        }
+
+        @Override
+        public int compareTo(Num o) {
+            return Integer.compare(num, o.num);
+        }
+    }
+  
+
 
 
 
