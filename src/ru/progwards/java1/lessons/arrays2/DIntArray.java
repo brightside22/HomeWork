@@ -2,7 +2,7 @@ package ru.progwards.java1.lessons.arrays2;
 
 import java.util.Arrays;
 
-public class DIntArray {
+ class DIntArray {
 
     private int[] a;
 
@@ -28,53 +28,34 @@ public class DIntArray {
 
     public void atDelete(int pos) {                    //удаляет элемент в позиции pos массива
         int[] aa = Arrays.copyOf(a, a.length - 1);
-
-            for (int i = pos; i < aa.length; i++) {
-                aa[i] = a[i + 1];
-            }
-            a = aa;
-
-    }
-
-
-    public interface Speaking {
-        public String say();
-    }
-
-    public class Dog implements Speaking {
-        public String say() {
-            return "Гав";
+        for (int i = pos; i < aa.length; i++) {
+            aa[i] = a[i+1];
         }
+        a = aa;
     }
-
-    public class Goat implements Speaking {
-        public String say() {
-            return "Мее";
-        }
-    }
-
-    public interface Comparable<T> {
-        public int compareTo(T o);
-    }
-
-    public class Num implements Comparable<Num> {
-        public int num;
-        Num(int num) {
-            this.num = num;
-        }
-
-        @Override
-        public int compareTo(Num o) {
-            return Integer.compare(num, o.num);
-        }
-    }
-  
-
-
-
-
     public int at(int pos) { //возврат элемента по позиции
         return a[pos];
+    }
+
+
+    public static void main(String[] args)
+    {
+        DIntArray d = new DIntArray();
+        System.out.println("Before :  " + Arrays.toString(d.a));
+
+        d.add(5);
+        d.add(60);
+        d.add(8);
+        d.add(111);
+        d.add(1234);
+        System.out.println("added  :  " + Arrays.toString(d.a));
+
+       d.atInsert(2,19);
+       System.out.println("inserted:  " + Arrays.toString(d.a));
+
+        d.atDelete(2);
+        System.out.println("deleted:  " + Arrays.toString(d.a));
+
     }
 }
 

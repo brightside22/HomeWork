@@ -66,28 +66,28 @@ public abstract class Animal {
         return calculateFoodWeight() * price;
     }
 }
+/*
+public interface IColor {
+    enum Color {
+        GRAY,
+        WHITE,
+        RED,
+        BEIGE,
+    }
+    public void Enum<IColor.Color> getColor(){
+        Color color = null;
 
-    public interface IColor {
-        enum Color {
-            GRAY,
-            WHITE,
-            RED,
-            BEIGE,
-        }
-        public void Enum<IColor.Color> getColor(){
-            Color color = null;
-
-            if (Animal.kind() == Cow){
-                color = Color.RED;
-            } else if (Animal == Duck){
-                color = Color.GRAY;
-            } else if  (Animal == Hamster) {
-                color = Color.BEIGE;
-            } return color;
-        }
-
+        if (Animal.kind() == Cow){
+            color = Color.RED;
+        } else if (Animal == Duck){
+            color = Color.GRAY;
+        } else if  (Animal == Hamster) {
+            color = Color.BEIGE;
+        } return color;
     }
 
+}
+*/
 
 
 
