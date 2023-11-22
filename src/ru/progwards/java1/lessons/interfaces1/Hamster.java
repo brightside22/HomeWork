@@ -6,6 +6,10 @@ public class Hamster extends Animal {
         super(name, weight);
     }
 
+    public Color getColor() {
+        return Color.BEIGE;
+    }
+
     public String kind() {
         return "хомяк";
     }

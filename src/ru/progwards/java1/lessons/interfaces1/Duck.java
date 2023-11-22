@@ -20,5 +20,8 @@ public class Duck extends Animal {
     public double getFoodCoeff() {
         return 0.04;
     }
+    public Color getColor() {
+        return Color.GRAY;
+    }
 
 }

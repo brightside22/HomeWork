@@ -68,30 +68,6 @@ public abstract class Animal implements IColor, Comparable<Animal> {
         }
         return calculateFoodWeight() * price;
     }
-
-    @Override
-    public Color getColor() {
-        if (this instanceof Cow) {
-            color = Color.RED;
-        }
-
-
-        else if (this instanceof Duck) {
-            color = Color.GRAY;
-        }
-
-
-        else if (this instanceof Hamster) {
-            color = Color.BEIGE;
-        }
-
-
-        return color;
-    }
-
-
-
-
 }
 
 
