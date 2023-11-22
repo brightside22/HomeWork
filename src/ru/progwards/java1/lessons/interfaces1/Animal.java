@@ -72,11 +72,19 @@ public abstract class Animal implements IColor, Comparable<Animal> {
     public Color getColor(Animal animal) {
         if (animal instanceof Cow) {
             color = Color.RED;
-        } else if (animal instanceof Duck) {
+        }
+
+
+        else if (animal instanceof Duck) {
             color = Color.GRAY;
-        } else if (animal instanceof Hamster) {
+        }
+
+
+        else if (animal instanceof Hamster) {
             color = Color.BEIGE;
         }
+
+
         return color;
     }
 

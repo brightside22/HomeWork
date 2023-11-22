@@ -4,6 +4,7 @@ public class Duck extends Animal {
     public Duck(String name, double weight) {
         super(name, weight);
     }
+
     public String kind() {
         return "утка";
     }
