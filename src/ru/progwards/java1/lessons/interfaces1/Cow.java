@@ -6,7 +6,7 @@ public class Cow extends Animal {
         return Color.RED;
     }
 
-    public Cow(String name, double weight) {
+    public Cow(String name,double weight) {
         super(name, weight);
     }
 

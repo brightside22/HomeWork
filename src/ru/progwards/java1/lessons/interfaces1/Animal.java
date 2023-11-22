@@ -20,6 +20,9 @@ public abstract class Animal implements IColor, Comparable<Animal> {
         return "Это " + kind() + " " + name + " " + weight + " " + getColor();
     }
 
+    @Override
+    public abstract Color getColor();
+
     public void setWeight(double weight) {
         this.weight = weight;
     }
