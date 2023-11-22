@@ -53,7 +53,7 @@ import java.util.Arrays;
        d.atInsert(2,19);
        System.out.println("inserted:  " + Arrays.toString(d.a));
 
-        d.atDelete(2);
+        d.atDelete(5);
         System.out.println("deleted:  " + Arrays.toString(d.a));
 
     }

@@ -1,12 +1,14 @@
 package ru.progwards.java1.lessons.interfaces1;
 
-public abstract class Animal {
+public abstract class Animal implements IColor, Comparable<Animal> {
     private String name;
     private double weight;
     private String kind;
+    private Color color;
 
-    public Animal(String name) {
+    public Animal(String name, double weight) {
         this.name = name;
+        this.weight = weight;
     }
 
     public abstract String kind();
@@ -14,7 +16,7 @@ public abstract class Animal {
     public abstract String say();
 
     public String toString() {
-        return "Это " + kind() + " " + name;
+        return "Это " + kind() + " " + name + " " + weight + " " + color;
     }
 
     public void setWeight(double weight) {
@@ -65,29 +67,20 @@ public abstract class Animal {
         }
         return calculateFoodWeight() * price;
     }
-}
-/*
-public interface IColor {
-    enum Color {
-        GRAY,
-        WHITE,
-        RED,
-        BEIGE,
-    }
-    public void Enum<IColor.Color> getColor(){
+
+    @Override
+    public Color getColor(Animal animal) {
         Color color = null;
-
-        if (Animal.kind() == Cow){
+        if (animal instanceof Cow) {
             color = Color.RED;
-        } else if (Animal == Duck){
+        } else if (animal instanceof Duck) {
             color = Color.GRAY;
-        } else if  (Animal == Hamster) {
+        } else if (animal instanceof Hamster) {
             color = Color.BEIGE;
-        } return color;
+        }
+        return color;
     }
-
 }
-*/
 
 
 
