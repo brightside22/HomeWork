@@ -2,6 +2,7 @@ package ru.progwards.java1.lessons.interfaces1;
 
 
 public class Cow extends Animal {
+
     public Cow(String name, double weight) {
         super(name, weight);
     }

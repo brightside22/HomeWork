@@ -14,6 +14,8 @@ public class TestCompare {
         Hamster hamster = new Hamster("Акакий", 0.25);
         Hamster hamster1 = new Hamster("Поликарп", 0.32);
 
+        Flower flower = new Flower();
+
         animals[0] = cow;
         animals[1] = cow1;
         animals[2] = duck;
@@ -23,6 +25,7 @@ public class TestCompare {
 
         Arrays.sort(animals);
         System.out.println(Arrays.toString(animals));
+
 
 
 

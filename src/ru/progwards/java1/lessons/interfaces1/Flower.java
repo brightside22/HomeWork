@@ -1,10 +1,8 @@
 package ru.progwards.java1.lessons.interfaces1;
 
-public class Flower implements IColor{
-    private String color;
+public class Flower  implements IColor{
     @Override
-    public Color getColor(Animal animal) {
-       Color color = Color.WHITE;
-        return color;
+    public Color getColor() {
+        return Color.WHITE;
     }
 }
