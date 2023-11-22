@@ -4,6 +4,7 @@ public abstract class Animal implements IColor, Comparable<Animal> {
     private String name;
     private double weight;
     private String kind;
+    private Color color;
 
     public Animal(String name, double weight) {
         this.name = name;
@@ -15,7 +16,7 @@ public abstract class Animal implements IColor, Comparable<Animal> {
     public abstract String say();
 
     public String toString() {
-        return "Это " + kind() + " " + name + " " + weight + " " + getColor();
+        return "Это " + kind() + " " + name + " " + weight + " " + getColor(this);
     }
 
     public void setWeight(double weight) {
@@ -68,23 +69,15 @@ public abstract class Animal implements IColor, Comparable<Animal> {
     }
 
     @Override
-    public Color getColor() {
-
-        if (this instanceof Cow) {
-            return Color.RED;
+    public Color getColor(Animal animal) {
+        if (animal instanceof Cow) {
+            color = Color.RED;
+        } else if (animal instanceof Duck) {
+            color = Color.GRAY;
+        } else if (animal instanceof Hamster) {
+            color = Color.BEIGE;
         }
-
-        else if (this instanceof Hamster) {
-            return Color.BEIGE;
-        }
-
-        else if (this instanceof Duck) {
-            return Color.GRAY;
-        }
-
-        else {
-            return null;
-        }
+        return color;
     }
 
 
