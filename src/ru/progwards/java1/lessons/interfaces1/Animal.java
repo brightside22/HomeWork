@@ -6,6 +6,7 @@ public abstract class Animal implements IColor, Comparable<Animal> {
     private String kind;
     private Color color;
 
+
     public Animal(String name, double weight) {
         this.name = name;
         this.weight = weight;
@@ -87,6 +88,8 @@ public abstract class Animal implements IColor, Comparable<Animal> {
 
         return color;
     }
+
+
 
 
 }
