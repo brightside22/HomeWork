@@ -1,9 +1,11 @@
 package ru.progwards.java1.lessons.classescompare;
 
 public class Duck extends Animal {
-    public Duck(String name, double weight) {
-        super(name, weight);
+    public Duck(String name) {
+        super(name);
     }
+
+
     public String kind() {
         return "утка";
     }

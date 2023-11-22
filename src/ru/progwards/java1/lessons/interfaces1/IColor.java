@@ -7,5 +7,6 @@ public interface IColor {
         RED,
         BEIGE,
     }
-    public Color getColor(Animal animal);
+
+    public Color getColor();
 }
