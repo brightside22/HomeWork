@@ -21,7 +21,7 @@ public abstract class Animal implements IColor, Comparable<Animal> {
     }
 
     @Override
-    public Color getColor(){
+    public abstract Color getColor(){
         return color;
     }
 
