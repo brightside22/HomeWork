@@ -1,6 +1,6 @@
 package ru.progwards.java1.lessons.interfaces1;
 
-public abstract class Circle implements Area {
+public class Circle implements Area {
 
     private  double diameter;
 

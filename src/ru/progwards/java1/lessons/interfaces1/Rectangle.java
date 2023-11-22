@@ -1,7 +1,7 @@
 package ru.progwards.java1.lessons.interfaces1;
 
 
-public abstract class Rectangle implements Area{
+public class Rectangle implements Area{
     private double length;
     private double width;
 

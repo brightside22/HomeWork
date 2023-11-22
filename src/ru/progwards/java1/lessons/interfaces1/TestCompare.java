@@ -9,7 +9,7 @@ public class TestCompare {
         Cow cow1 = new Cow("Рыжая", 250);
 
         Duck duck = new Duck("Даша", 3);
-        Duck duck1 = new Duck("Даша", 3.5);
+        Duck duck1 = new Duck("Маша", 3.5);
 
         Hamster hamster = new Hamster("Акакий", 0.25);
         Hamster hamster1 = new Hamster("Поликарп", 0.32);

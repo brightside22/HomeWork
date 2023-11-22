@@ -1,6 +1,6 @@
 package ru.progwards.java1.lessons.interfaces1;
 
-public abstract class Square implements Area {
+public class Square implements Area {
 
     private double segment;
 
