@@ -20,11 +20,6 @@ public abstract class Animal implements IColor, Comparable<Animal> {
         return "Это " + kind() + " " + name + " " + weight + " " + getColor();
     }
 
-    @Override
-    public Color getColor(){
-        return color;
-    }
-
     public void setWeight(double weight) {
         this.weight = weight;
     }
@@ -72,6 +67,42 @@ public abstract class Animal implements IColor, Comparable<Animal> {
             return price = 15;
         }
         return calculateFoodWeight() * price;
+    }
+
+    @Override
+    public Color getColor(){
+        return color;
+    }
+
+
+
+
+    class Gun {
+        String model;
+        double caliber;
+
+        public Gun(String model, double caliber) {
+            this.model = model;
+            this.caliber = caliber;
+        }
+
+        int compareTo(Gun gun) {
+            return Double.compare(caliber, gun.caliber);
+        }
+    }
+    public interface Comparable<T> {
+        public int compareTo(T o);
+    }
+
+    public class Num implements Comparable<Num>{
+        public  int num;
+
+        Num(int num){
+            this.num = num;
+        }
+        public int compareTo(Num o) {
+            return Integer.compare(o.num, num);
+        }
     }
 }
 

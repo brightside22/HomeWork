@@ -1,7 +1,8 @@
 package ru.progwards.java1.lessons.interfaces1;
 
-
 public class Cow extends Animal {
+
+    @Override
     public Color getColor() {
         return Color.RED;
     }
