@@ -25,9 +25,5 @@ public class TestCompare {
 
         Arrays.sort(animals);
         System.out.println(Arrays.toString(animals));
-
-
-
-
     }
 }

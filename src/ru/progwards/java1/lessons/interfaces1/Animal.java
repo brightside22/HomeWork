@@ -76,7 +76,6 @@ public abstract class Animal implements IColor, Comparable<Animal> {
 
 
 
-
     class Gun {
         String model;
         double caliber;
@@ -103,6 +102,41 @@ public abstract class Animal implements IColor, Comparable<Animal> {
         public int compareTo(Num o) {
             return Integer.compare(o.num, num);
         }
+    }
+
+
+
+
+
+
+
+
+    public interface Temperature {
+        public double getTemperature();
+    }
+
+    abstract public static class Body implements Temperature {
+    }
+
+    public static class Man extends Body {
+        @Override
+        public double getTemperature() {
+            return 36.6;
+        }
+    }
+
+    public static class Sun extends Body {
+        @Override
+        public double getTemperature() {
+            return 5500;
+        }
+    }
+
+    static Temperature maxTemperature(Body b1, Body b2) {
+        if (b1.getTemperature() > b2.getTemperature())
+            return b1;
+        else
+            return b2;
     }
 }
 
