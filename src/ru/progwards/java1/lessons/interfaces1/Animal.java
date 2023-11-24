@@ -12,6 +12,10 @@ public abstract class Animal implements IColor, Comparable<Animal> {
         this.weight = weight;
     }
 
+    public Animal(String name) {
+        this.name = name;
+    }
+
     public abstract String kind();
 
     public abstract String say();
