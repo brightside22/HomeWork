@@ -12,6 +12,11 @@ public class Cow extends Animal {
         this.name = name;
     }
 
+    public Cow(String name) {
+        super(name);
+        this.name = name;
+    }
+
     public String kind() {
         return "корова";
     }
