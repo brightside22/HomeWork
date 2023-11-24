@@ -2,7 +2,7 @@ package ru.progwards.java1.lessons.interfaces1;
 
 public abstract class Animal implements IColor, Comparable<Animal> {
     private String name;
-    double weight;
+    private double weight;
     private String kind;
     private Color color;
 
