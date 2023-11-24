@@ -2,7 +2,7 @@ package ru.progwards.java1.lessons.interfaces1;
 
 public abstract class Animal implements IColor, Comparable<Animal> {
     private String name;
-    private double weight;
+    double weight;
     private String kind;
     private Color color;
 
@@ -75,69 +75,6 @@ public abstract class Animal implements IColor, Comparable<Animal> {
     }
 
 
-
-    class Gun {
-        String model;
-        double caliber;
-
-        public Gun(String model, double caliber) {
-            this.model = model;
-            this.caliber = caliber;
-        }
-
-        int compareTo(Gun gun) {
-            return Double.compare(caliber, gun.caliber);
-        }
-    }
-    public interface Comparable<T> {
-        public int compareTo(T o);
-    }
-
-    public class Num implements Comparable<Num>{
-        public  int num;
-
-        Num(int num){
-            this.num = num;
-        }
-        public int compareTo(Num o) {
-            return Integer.compare(o.num, num);
-        }
-    }
-
-
-
-
-
-
-
-
-    public interface Temperature {
-        public double getTemperature();
-    }
-
-    abstract public static class Body implements Temperature {
-    }
-
-    public static class Man extends Body {
-        @Override
-        public double getTemperature() {
-            return 36.6;
-        }
-    }
-
-    public static class Sun extends Body {
-        @Override
-        public double getTemperature() {
-            return 5500;
-        }
-    }
-
-    static Temperature maxTemperature(Body b1, Body b2) {
-        if (b1.getTemperature() > b2.getTemperature())
-            return b1;
-        else
-            return b2;
-    }
 }
 
 
