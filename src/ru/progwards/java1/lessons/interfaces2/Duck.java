@@ -1,7 +1,5 @@
 package ru.progwards.java1.lessons.interfaces2;
 
-import ru.progwards.java1.lessons.interfaces1.Animal;
-
 public class Duck extends Animal {
     public Duck(String name, double weight) {
         super(name, weight);
@@ -31,6 +29,10 @@ public class Duck extends Animal {
     @Override
     public Color getColor() {
         return Color.GRAY;
+    }
+    @Override
+    public String getHome() {
+        return "ферма";
     }
 
 }

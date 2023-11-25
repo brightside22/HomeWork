@@ -1,14 +1,7 @@
 package ru.progwards.java1.lessons.interfaces2;
 
-import ru.progwards.java1.lessons.interfaces1.Animal;
 
 public class Cow extends Animal {
-
-    @Override
-    public Color getColor() {
-        return Color.RED;
-    }
-
     public Cow(String name,double weight) {
         super(name, weight);
         this.name = name;
@@ -34,5 +27,16 @@ public class Cow extends Animal {
     public double getFoodCoeff() {
         return 0.05;
     }
+
+    @Override
+    public Color getColor() {
+        return Color.RED;
+    }
+
+    @Override
+    public String getHome() {
+        return "ферма";
+    }
+
 
 }
