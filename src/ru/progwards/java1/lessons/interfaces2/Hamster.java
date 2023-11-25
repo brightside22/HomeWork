@@ -10,10 +10,7 @@ public class Hamster extends Animal {
         this.name = name;
     }
 
-    public Hamster(double weight) {
-        super(weight);
-        this.weight = weight;
-    }
+
 
     public String kind() {
         return "хомяк";
