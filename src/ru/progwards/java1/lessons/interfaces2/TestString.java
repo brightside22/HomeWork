@@ -7,11 +7,11 @@ public class TestString {
     }
 
     public static void main (String[] args) {
-        Cow cow = new Cow("Пеструшка");
+        Cow cow = new Cow("Пеструшка", 0.0);
         print(cow);
-        Duck duck = new Duck("Даша");
+        Duck duck = new Duck("Даша", 0.0);
         print(duck);
-        Hamster hamster = new Hamster("Поликарп");
+        Hamster hamster = new Hamster("Поликарп", 0.0);
         print(hamster);
         Time time = new Time(1, 12, 55);
         print(time);
