@@ -27,6 +27,7 @@ public class CompareHome {
 
         sameHome( cow, duck);
         sameHome( cow, hamster);
+        sameHome( cow, hawk);
         sameHome( duck, hamster);
         sameHome( duck, hawk);
         sameHome( hamster, hawk);

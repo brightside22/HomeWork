@@ -11,6 +11,11 @@ public class Duck extends Animal {
         this.name = name;
     }
 
+    public Duck(double weight) {
+        super(weight);
+        this.weight = weight;
+    }
+
     public String kind() {
         return "утка";
     }

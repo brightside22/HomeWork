@@ -12,6 +12,12 @@ public class Cow extends Animal {
         this.name = name;
     }
 
+    public Cow(double weight) {
+        super(weight);
+        this.weight = weight;
+    }
+
+
     public String kind() {
         return "корова";
     }
