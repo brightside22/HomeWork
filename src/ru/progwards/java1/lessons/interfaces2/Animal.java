@@ -6,6 +6,7 @@ public abstract class Animal implements IColor, Comparable<Animal>, Home, ToStri
      static double weight;
      String kind;
      Color color;
+     Home home;
 
 
     public Animal(String name, double weight) {
@@ -92,6 +93,11 @@ public abstract class Animal implements IColor, Comparable<Animal>, Home, ToStri
             return CompareResult.EQUAL;
         else
             return CompareResult.GREATER;
+    }
+
+    @Override
+    public String getHome() {
+        return String.valueOf(home);
     }
 
 }

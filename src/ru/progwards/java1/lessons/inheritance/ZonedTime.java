@@ -44,16 +44,7 @@ public class ZonedTime extends Time {
 
     }
 
-    int[][] m = {{}};
-    int sum = arraySum2(m, 0);
 
-    public int arraySum2(int[][] m, int n) {
-        int z = 0;
-        for (int i = 0; i < m.length; i++) {
-            z += m[n][n];
-        }
-        return z;
-    }
     
 }
 

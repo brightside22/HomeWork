@@ -34,4 +34,5 @@ public class Duck extends Animal {
         return "ферма";
     }
 
+
 }
