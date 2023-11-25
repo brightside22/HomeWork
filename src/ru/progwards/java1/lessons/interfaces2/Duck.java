@@ -30,8 +30,7 @@ public class Duck extends Animal {
     public Color getColor() {
         return Color.GRAY;
     }
-    @Override
-    public String getHome() {
+    public  String getHome() {
         return "ферма";
     }
 

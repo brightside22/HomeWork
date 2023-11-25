@@ -16,9 +16,9 @@ public class CompareHome {
     }
 
     public static void main(String[] args) {
-        Cow cow = new Cow("Пеструшка", 350.0);
-        Duck duck = new Duck("Даша", 3.0);
-        Hamster hamster = new Hamster("Акакий", 0.25);
+        Cow cow = new Cow("aaa");
+        Duck duck = new Duck("aaa");
+        Animal hamster = new Cow("aaa");
         Hawk hawk = new Hawk();
 
 

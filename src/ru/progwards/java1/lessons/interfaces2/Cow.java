@@ -33,7 +33,6 @@ public class Cow extends Animal {
         return Color.RED;
     }
 
-    @Override
     public String getHome() {
         return "ферма";
     }
