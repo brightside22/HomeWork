@@ -1,13 +1,16 @@
 package ru.progwards.java1.lessons.interfaces2;
 
 public class Hamster extends Animal {
+
+    private double weight;
+
     public Hamster(String name, double weight) {
         super(name, weight);
-        this.weight = weight;
     }
-    public Hamster(String name) {
-        super(name);
-        this.name = name;
+
+    public Hamster(double weight) {
+        super(weight);
+        this.weight = weight;
     }
 
 

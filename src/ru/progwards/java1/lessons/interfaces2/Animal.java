@@ -2,21 +2,24 @@ package ru.progwards.java1.lessons.interfaces2;
 
 
 public abstract class Animal implements IColor, Comparable<Animal>, Home, ToString, CompareWeight {
-     String name;
+
+    String name;
      static double weight;
-     String kind;
+    String kind;
      Color color;
      Home home;
 
 
     public Animal(String name, double weight) {
         this.name = name;
+    }
+
+    public Animal(double weight) {
         this.weight = weight;
     }
 
-    public Animal(String name) {
-        this.name = name;
-    }
+
+
 
     public abstract String kind();
 
@@ -94,6 +97,7 @@ public abstract class Animal implements IColor, Comparable<Animal>, Home, ToStri
         else
             return CompareResult.GREATER;
     }
+
 
     @Override
     public String getHome() {

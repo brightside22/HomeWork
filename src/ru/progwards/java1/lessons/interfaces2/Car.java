@@ -10,6 +10,7 @@ public class Car implements CompareWeight{
     public double getWeight() {
         return weight;
     }
+
     public String toString() {
         return "Это автомобиль грузоподъемностью " + getWeight();
     }
