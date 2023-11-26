@@ -3,14 +3,18 @@ package ru.progwards.java1.lessons.interfaces2;
 public class Duck extends Animal  {
     private double weight;
 
-    public Duck(String name, double weight) {
+    public Duck(String name,double weight) {
         super(name, weight);
-    }
-
-    public Duck(double weight) {
-        super(weight);
+        this.name = name;
         this.weight = weight;
     }
+
+
+    public Duck(String name) {
+        super(name);
+        this.name = name;
+    }
+
 
     public String kind() {
         return "утка";

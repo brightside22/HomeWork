@@ -4,15 +4,18 @@ package ru.progwards.java1.lessons.interfaces2;
 public class Cow extends Animal {
     private double weight;
 
-
-    public Cow(String name, double weight) {
+    public Cow(String name,double weight) {
         super(name, weight);
-    }
-
-    public Cow(double weight) {
-        super(weight);
+        this.name = name;
         this.weight = weight;
     }
+
+
+    public Cow(String name) {
+        super(name);
+        this.name = name;
+    }
+
 
 
     public String kind() {

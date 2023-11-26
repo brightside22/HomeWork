@@ -4,15 +4,17 @@ public class Hamster extends Animal {
 
     private double weight;
 
-    public Hamster(String name, double weight) {
+    public Hamster(String name,double weight) {
         super(name, weight);
-    }
-
-    public Hamster(double weight) {
-        super(weight);
+        this.name = name;
         this.weight = weight;
     }
 
+
+    public Hamster(String name) {
+        super(name);
+        this.name = name;
+    }
 
 
     public String kind() {

@@ -12,12 +12,12 @@ public abstract class Animal implements IColor, Comparable<Animal>, Home, ToStri
 
     public Animal(String name, double weight) {
         this.name = name;
-    }
-
-    public Animal(double weight) {
         this.weight = weight;
     }
 
+    public Animal(String name) {
+        this.name = name;
+    }
 
 
 
