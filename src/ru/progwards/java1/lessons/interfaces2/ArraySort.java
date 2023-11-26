@@ -33,7 +33,7 @@ public class ArraySort {
         };
 
 
-        System.out.println(Arrays.toString(a));
+        System.out.println(Arrays.toString(a)); //тут не совсем понимаю почему у меня присваивается вес последнего животного
 
         System.out.println(sort(a));
 

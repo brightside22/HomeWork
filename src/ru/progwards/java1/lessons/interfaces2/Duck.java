@@ -1,13 +1,14 @@
 package ru.progwards.java1.lessons.interfaces2;
 
 public class Duck extends Animal  {
-    private double weight;
+     private  double weight;
 
     public Duck(String name,double weight) {
         super(name, weight);
         this.name = name;
         this.weight = weight;
     }
+
 
 
     public Duck(String name) {
@@ -38,6 +39,20 @@ public class Duck extends Animal  {
     public  String getHome() {
         return "ферма";
     }
+
+
+    public interface Fruit {
+        public double getWeight();
+    }
+
+    public static double sumFuits(Fruit []box) {
+        double a = 0;
+        for (int i = 0; i<box.length; i++) {
+            a += box[i].getWeight();
+        }
+        return a;
+    }
+
 
 
 }

@@ -10,7 +10,6 @@ public class Hamster extends Animal {
         this.weight = weight;
     }
 
-
     public Hamster(String name) {
         super(name);
         this.name = name;
@@ -41,6 +40,7 @@ public class Hamster extends Animal {
     public String getHome() {
         return "поле";
     }
+
 
 
 

@@ -2,9 +2,9 @@ package ru.progwards.java1.lessons.interfaces2;
 
 
 public class Cow extends Animal {
-    private double weight;
+     private double weight;
 
-    public Cow(String name,double weight) {
+    public Cow(String name, double weight) {
         super(name, weight);
         this.name = name;
         this.weight = weight;
@@ -15,6 +15,8 @@ public class Cow extends Animal {
         super(name);
         this.name = name;
     }
+
+
 
 
 
@@ -42,6 +44,8 @@ public class Cow extends Animal {
     public String getHome() {
         return "ферма";
     }
+
+
 
 
 

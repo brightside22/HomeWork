@@ -4,14 +4,13 @@ package ru.progwards.java1.lessons.interfaces2;
 public abstract class Animal implements IColor, Comparable<Animal>, Home, ToString, CompareWeight {
 
     String name;
-     static double weight;
+      static double weight;
     String kind;
      Color color;
      Home home;
 
 
     public Animal(String name, double weight) {
-        this.name = name;
         this.weight = weight;
     }
 
@@ -88,7 +87,7 @@ public abstract class Animal implements IColor, Comparable<Animal>, Home, ToStri
         return toString();
     }
 
-    @Override
+     @Override
     public CompareResult compareWeight(CompareWeight smthHasWeight) {
         if (Animal.weight < smthHasWeight.getWeight())
             return CompareResult.LESS;
@@ -97,7 +96,6 @@ public abstract class Animal implements IColor, Comparable<Animal>, Home, ToStri
         else
             return CompareResult.GREATER;
     }
-
 
     @Override
     public String getHome() {
