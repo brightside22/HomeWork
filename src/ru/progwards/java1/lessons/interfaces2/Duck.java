@@ -1,7 +1,6 @@
 package ru.progwards.java1.lessons.interfaces2;
 
 public class Duck extends Animal  {
-     private  double weight;
 
     public Duck(String name,double weight) {
         super(name, weight);
@@ -52,7 +51,6 @@ public class Duck extends Animal  {
         }
         return a;
     }
-
 
 
 }

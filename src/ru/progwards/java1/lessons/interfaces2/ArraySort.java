@@ -31,10 +31,6 @@ public class ArraySort {
                 new Hamster("Поликарп", 0.32),
                 new Car(1000)
         };
-
-
-        System.out.println(Arrays.toString(a)); //тут не совсем понимаю почему у меня присваивается вес последнего животного
-
         System.out.println(sort(a));
 
     }
