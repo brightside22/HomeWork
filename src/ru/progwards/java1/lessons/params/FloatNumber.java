@@ -70,37 +70,17 @@ public class FloatNumber {
     }
 
     public String toString(){
-
-        int count = 0;
-        String str1 = null;
-
-        char [] str = num.toCharArray();
-        str1 = num;
-
-        if (Integer.parseInt(num) > 0)
-            for (int i = 1; i < num.length(); i++) {
-                if (str[i] == '0'){
-                    count ++;
-                }
-                exp = count;
-            }
-        else if (Integer.parseInt(num) < 0)
-            for (int i = num.length(); i > 0; i--) {
-                if (str[i] == '0'){
-                    count ++;
-                }
-                exp = count *-1;
-            }
-
-        if (str[0] == '-') {
-            sing = false;
-            return  "-" + str1 +"E"+exp;
+        if (sing == false & exp !=0) {
+            return "-" + mantissa + "E" + exp;
         }
-
-        else {
-            sing = true;
-            return str1;
+        else if (sing == false & exp ==0) {
+            return "-" + mantissa;
         }
+        else if (sing == true & exp ==0) {
+            return  String.valueOf(mantissa);
+        }
+        else
+            return mantissa + "E" + exp;
     }
 
     public double toDouble() {
