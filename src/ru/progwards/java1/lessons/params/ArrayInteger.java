@@ -34,7 +34,7 @@ public class ArrayInteger {
         int count = Math.max(len1, len2);
 
        if (count >= count){
-            for (int i = count; i<count; i--){
+            for (int i = count; i<count & i >=0; i--){
                 sum = (byte) (num1[i] + num2[i]);
                     num3[i-1] += sum %10;
                     perepol = (byte) (sum/10);
