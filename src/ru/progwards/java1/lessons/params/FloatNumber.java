@@ -70,17 +70,24 @@ public class FloatNumber {
     }
 
     public String toString(){
-        if (sing == false & exp !=0) {
-            return "-" + mantissa + "E" + exp;
+
+        int count = 0;
+        String str1 = null;
+
+        char [] str = num.toCharArray();
+        str1 = num;
+
+
+
+        if (str[0] == '-') {
+            sing = false;
+            return  "-" + str1 +"E"+exp;
         }
-        else if (sing == false & exp ==0) {
-            return "-" + mantissa;
+
+        else {
+            sing = true;
+            return str1;
         }
-        else if (sing == true & exp ==0) {
-            return  String.valueOf(mantissa);
-        }
-        else
-            return mantissa + "E" + exp;
     }
 
     public double toDouble() {
@@ -126,7 +133,6 @@ public class FloatNumber {
                 str[0] = '-';
             }
         }
-
         return num = String.valueOf(str);
     }
 
