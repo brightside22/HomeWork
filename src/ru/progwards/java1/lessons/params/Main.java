@@ -7,7 +7,6 @@ public class Main {
 
         AbsInteger result = AbsInteger.add(num1, num2);
 
-        System.out.println("Результат: " + result);
-        System.out.println("Ожидалось: 54");
+        System.out.println(result);
     }
 }
