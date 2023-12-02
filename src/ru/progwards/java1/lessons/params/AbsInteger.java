@@ -6,22 +6,21 @@ public abstract class AbsInteger {
     static AbsInteger add(AbsInteger num1, AbsInteger num2) {
         int sum = num1.intValue() + num2.intValue();
 
-        AbsInteger result;
+        AbsInteger result = null;
 
-        if (sum >= Byte.MIN_VALUE && sum <= Byte.MAX_VALUE) {
+        if (sum >= Byte.MIN_VALUE & sum <= Byte.MAX_VALUE) {
             result = new ByteInteger((byte) sum);
         }
 
-        else if (sum >= Short.MIN_VALUE && sum <= Short.MAX_VALUE) {
+        else if (sum >= Short.MIN_VALUE & sum <= Short.MAX_VALUE) {
             result = new ShortInteger((short) sum);
         }
 
-        else {
+        else if (Short.MAX_VALUE < sum || sum > Short.MIN_VALUE) {
             result = new IntInteger(sum);
         }
 
         return result;
     }
-
 
 }

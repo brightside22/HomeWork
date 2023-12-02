@@ -14,6 +14,7 @@ public class ShortInteger extends AbsInteger{
 
     @Override
     public int intValue(){
+        value = (int) num;
         return value;
     }
 
