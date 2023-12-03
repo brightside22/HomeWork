@@ -13,7 +13,7 @@ public class ArrayInteger {
         String StrValue =String.valueOf(value);
         digits = new byte[StrValue.length()];
         for (int i = 0; i < value.length(); i++) {
-            digits[i] = Byte.parseByte(String.valueOf(i));
+            digits[i] = Byte.parseByte(String.valueOf(value.charAt(i)));
         }
     }
 
@@ -78,12 +78,12 @@ public class ArrayInteger {
     }
 
 
-        public static void main(String[] args) {
-        ArrayInteger num1 = new ArrayInteger(7);
+    public static void main(String[] args) {
+        ArrayInteger num1 = new ArrayInteger(8);
         num1.fromString("14463774");
         System.out.println("num1: " + num1.toString());
 
-        ArrayInteger num2 = new ArrayInteger(6);
+        ArrayInteger num2 = new ArrayInteger(5);
         num2.fromString("83345");
         System.out.println("num2: " + num2.toString());
 
