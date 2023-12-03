@@ -34,11 +34,35 @@ public class ArrayInteger {
         int leng2 = num2.length;
         int count = Math.max(leng1, leng2);
 
-        byte[] num3 = new byte[count + 1];
+
+        if (count == leng1) {
+            byte[] num4 = new byte [num1.length];
+           int z = num1.length - num2.length;
+
+           for(int i = z; i < num4.length; i++) {
+               num4[i] = num2[i - z];
+           }
+           num2 = num4;
+        }
+
+
+        if (count == leng2) {
+            byte[] num4 = new byte [num2.length];
+            int z = num2.length - num1.length;
+
+            for(int i = z; i < num4.length; i++) {
+                num4[i] = num1[i - z];
+            }
+            num1 = num4;
+        }
+
+
+
+
+        byte[] num3 = new byte[count];
 
 
         for (int i = count - 1; i >= 0; i--) {
-
             if (i < leng1 && i < leng2) {
                 sum = num1[i] + num2[i] + perepol;
             }
@@ -46,6 +70,7 @@ public class ArrayInteger {
             else if (i < leng1) {
                 sum = num1[i] + perepol;
             }
+
 
             else {
                 sum = num2[i] + perepol;
@@ -55,30 +80,35 @@ public class ArrayInteger {
             perepol = (byte) (sum / 10);
         }
 
+
         if (perepol != 0) {
+            num1 = new byte[0];
             return false;
         }
 
         else {
-            num1 = Arrays.copyOf(num3, count);
+            num1 = new byte[ count];
+            for ( int i =0; i<num1.length; i++) {
+                num1[i] = num3[i];
+            }
             return true;
         }
     }
 
 
     public static void main(String[] args) {
-        ArrayInteger num1 = new ArrayInteger(7);
-        num1.fromString("1140955");
+        ArrayInteger num1 = new ArrayInteger(8);
+        num1.fromString("15711584");
         System.out.println("num1: " + num1.toString());
 
-        ArrayInteger num2 = new ArrayInteger(6);
-        num2.fromString("100792");
+        ArrayInteger num2 = new ArrayInteger(5);
+        num2.fromString("31578");
         System.out.println("num2: " + num2.toString());
 
         boolean added = num1.add(num2);
         System.out.println("Sum: " + num1.add(num2));
-
         System.out.println("num1: " + num1.toString());
+
 
 
 
