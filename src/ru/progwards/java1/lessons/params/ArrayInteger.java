@@ -35,44 +35,15 @@ public class ArrayInteger {
         int count = Math.max(leng1, leng2);
 
 
-        if (count == leng1) {
-            byte[] num4 = new byte [num1.length];
-           int z = num1.length - num2.length;
-
-           for(int i = z; i < num4.length; i++) {
-               num4[i] = num2[i - z];
-           }
-           num2 = num4;
-        }
-
-
-        if (count == leng2) {
-            byte[] num4 = new byte [num2.length];
-            int z = num2.length - num1.length;
-
-            for(int i = z; i < num4.length; i++) {
-                num4[i] = num1[i - z];
-            }
-            num1 = num4;
-        }
-
-
-
-
-        byte[] num3 = new byte[count];
+        byte[] num3 = new byte[count + 1];
 
 
         for (int i = count - 1; i >= 0; i--) {
             if (i < leng1 && i < leng2) {
                 sum = num1[i] + num2[i] + perepol;
-            }
-
-            else if (i < leng1) {
+            } else if (i < leng1) {
                 sum = num1[i] + perepol;
-            }
-
-
-            else {
+            } else {
                 sum = num2[i] + perepol;
             }
 
@@ -97,11 +68,11 @@ public class ArrayInteger {
 
 
     public static void main(String[] args) {
-        ArrayInteger num1 = new ArrayInteger(8);
+        ArrayInteger num1 = new ArrayInteger(7);
         num1.fromString("15711584");
         System.out.println("num1: " + num1.toString());
 
-        ArrayInteger num2 = new ArrayInteger(5);
+        ArrayInteger num2 = new ArrayInteger(6);
         num2.fromString("31578");
         System.out.println("num2: " + num2.toString());
 
