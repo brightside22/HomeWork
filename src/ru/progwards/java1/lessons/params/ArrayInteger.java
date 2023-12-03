@@ -6,8 +6,7 @@ public class ArrayInteger {
 
 
     ArrayInteger(int n) {
-     String n1 = String.valueOf(n);
-     char [] nChar = n1.toCharArray();
+        byte[] digits = new byte [n];
     }
 
     void fromString(String value) {
@@ -25,13 +24,15 @@ public class ArrayInteger {
     public boolean add(ArrayInteger num) {
        byte[] num1 = this.digits;
        byte[] num2 = num.digits;
-       byte[] num3 = {};
        byte sum = 0;
        byte perepol = 0;
 
         int len1 = num1.length;
         int len2 = num2.length;
         int count = Math.max(len1, len2);
+
+        byte[] num3 = new byte[count + 1];
+
 
        if (count >= count){
             for (int i = count; i<count & i >=0; i--){
@@ -45,8 +46,10 @@ public class ArrayInteger {
             return false;
         }
 
-        this.digits = Arrays.copyOf(num3, count);
-        return true;
+        else {
+            this.digits = Arrays.copyOf(num3, count);
+            return true;
+        }
     }
 
 
@@ -56,16 +59,12 @@ public class ArrayInteger {
         System.out.println("num1: " + num1.toString());
 
         ArrayInteger num2 = new ArrayInteger(5);
-        num2.fromString("98765");
+        num2.fromString("12333");
         System.out.println("num2: " + num2.toString());
 
         boolean added = num1.add(num2);
-        if (added) {
-            System.out.println("Sum: " + num1.toString());
-        } else {
-            System.out.println("Overflow! Result reset to 0.");
-            System.out.println("Sum: " + num1.toString());
-        }
+            System.out.println("Sum: " + num1.add(num2));
+
     }
 
 
