@@ -10,7 +10,8 @@ public class ArrayInteger {
     }
 
     void fromString(String value) {
-        digits = new byte[value.length()];
+        String StrValue =String.valueOf(value);
+        digits = new byte[StrValue.length()];
         for (int i = 0; i < value.length(); i++) {
             digits[i] = Byte.parseByte(String.valueOf(value.charAt(i)));
         }
