@@ -57,17 +57,12 @@ public class ArrayInteger {
 
 
 
-        byte[] num3 = new byte[count + 1];
+        byte[] num3 = new byte[count];
 
 
         for (int i = count - 1; i >= 0; i--) {
-            if (i < leng1 && i < leng2) {
                 sum = num1[i] + num2[i] + perepol;
-            } else if (i < leng1) {
-                sum = num1[i] + perepol;
-            } else {
-                sum = num2[i] + perepol;
-            }
+
 
             num3[i] = (byte) (sum % 10);
             perepol = (byte) (sum / 10);
