@@ -13,7 +13,7 @@ public class ArrayInteger {
         String StrValue =String.valueOf(value);
         digits = new byte[StrValue.length()];
         for (int i = 0; i < value.length(); i++) {
-            digits[i] = Byte.parseByte(String.valueOf(value.charAt(i)));
+            digits[i] = Byte.parseByte(String.valueOf(i));
         }
     }
 
@@ -56,14 +56,12 @@ public class ArrayInteger {
         byte[] num3 = new byte[count + 1];
 
 
+
         for (int i = count - 1; i >= 0; i--) {
-            perepol =  (sum / 10);
-            if (perepol != 0) {
-                num3[i-1] = (byte) perepol;
-            }
-            sum = num1[i] + num2[i];
+            sum = num1[i] + num2[i] + perepol;
             num3[i] = (byte) (sum % 10);
 
+            perepol = sum / 10;
         }
 
 
@@ -82,11 +80,11 @@ public class ArrayInteger {
 
         public static void main(String[] args) {
         ArrayInteger num1 = new ArrayInteger(7);
-        num1.fromString("11978305");
+        num1.fromString("14463774");
         System.out.println("num1: " + num1.toString());
 
         ArrayInteger num2 = new ArrayInteger(6);
-        num2.fromString("922337203685477580762890");
+        num2.fromString("83345");
         System.out.println("num2: " + num2.toString());
 
         boolean added = num1.add(num2);
