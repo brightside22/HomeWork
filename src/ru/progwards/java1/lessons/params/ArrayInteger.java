@@ -10,11 +10,14 @@ public class ArrayInteger {
     }
 
     void fromString(String value) {
-        digits = new byte[Integer.parseInt(value)];
+        digits = new byte[value.length()];
+        for (int i = 0; i < value.length(); i++) {
+            digits[i] = Byte.parseByte(String.valueOf(value.charAt(i)));
+        }
     }
 
     public String toString() {
-        String numStr = null;
+        String numStr = "";
         for(int i =0; i<digits.length;i++) {
             numStr += String.valueOf(digits[i]);
         }
@@ -59,7 +62,7 @@ public class ArrayInteger {
         System.out.println("num1: " + num1.toString());
 
         ArrayInteger num2 = new ArrayInteger(5);
-        num2.fromString("12333");
+        num2.fromString("99999");
         System.out.println("num2: " + num2.toString());
 
         boolean added = num1.add(num2);
