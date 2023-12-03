@@ -22,6 +22,7 @@ public class ArrayInteger {
         for(int i =0; i<digits.length; i++) {
             numStr += String.valueOf(digits[i]);
         }
+
         return numStr;
     }
 
@@ -73,11 +74,31 @@ public class ArrayInteger {
             for (int i= 0; i < this.digits.length; i++) {
                 this.digits[i] = num3[i];
             }
+            num1 = this.digits;
 
             return true;
         }
     }
 
+
+    public static void main(String[] args) {
+        ArrayInteger num1 = new ArrayInteger(8);
+        num1.fromString("17232700");
+        System.out.println("num1: " + num1.toString());
+
+        ArrayInteger num2 = new ArrayInteger(5);
+        num2.fromString("68345");
+        System.out.println("num2: " + num2.toString());
+
+        boolean added = num1.add(num2);
+        System.out.println("Sum: " + added);
+        System.out.println("num1: " + num1.toString());
+
+
+
+
+
+    }
 
 
 }
