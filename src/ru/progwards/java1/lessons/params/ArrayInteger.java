@@ -34,6 +34,28 @@ public class ArrayInteger {
         int leng2 = num2.length;
         int count = Math.max(leng1, leng2);
 
+        if (count == leng1) {
+            byte[] num4 = new byte [num1.length];
+            int z = num1.length - num2.length;
+
+            for(int i = z; i < num4.length; i++) {
+                num4[i] = num2[i - z];
+            }
+            num2 = num4;
+        }
+
+
+        if (count == leng2) {
+            byte[] num4 = new byte [num2.length];
+            int z = num2.length - num1.length;
+
+            for(int i = z; i < num4.length; i++) {
+                num4[i] = num1[i - z];
+            }
+            num1 = num4;
+        }
+
+
 
         byte[] num3 = new byte[count + 1];
 
