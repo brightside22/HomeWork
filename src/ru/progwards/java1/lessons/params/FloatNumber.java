@@ -45,32 +45,42 @@ public class FloatNumber {
         }
     }
 
-    public String toString(){
-
+    public String toString() {
         int count = 0;
         String str1 = "";
+        String Smant = String.valueOf(mantissa);
 
-        String Smant = (String.valueOf(mantissa));
+        char[] Cmant = Smant.toCharArray();
+        char[] num1 = new char[Smant.length()+1];
 
-
-        char [] Cmant = Smant.toCharArray();
-
-
-        char [] num1 = new char[ (Smant.length()) + 1 ];
         for (int i = 0; i < Cmant.length; i++) {
-            if (sing == false) {
+
+            if (!sing) {
+
                 num1[0] = '-';
-                num1[i+1] = Cmant[i];
-            }
-            else {
-                num1[i] = Cmant[i];
+                if (i == 1) {
+                    num1[i] = Cmant[i-1];
+                }
+                else if (i >= 2) {
+                    num1[2] = '.';
+                    num1[i+1] = Cmant[i-1];
+                }
+
+            } else {
+                if (i < 1) {
+                    num1[i] = Cmant[i];
+                }
+                else if (i >= 1) {
+                    num1[1] = '.';
+                    num1[i+1] = Cmant[i];
+                }
             }
         }
 
         for (int i = 0; i < num1.length; i++) {
             str1 += num1[i];
         }
-        return str1 + "E" + exp;
+        return str1 + "E" + (exp-1);
     }
 
     public double toDouble() {
@@ -145,7 +155,7 @@ public class FloatNumber {
     }
 
     public static void main(String[] args) {
-       FloatNumber num1 = new FloatNumber(false, 123456789, 4);
+       FloatNumber num1 = new FloatNumber(false, 393555, 3);
 
        System.out.println(num1.toString());
 
