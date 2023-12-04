@@ -28,7 +28,7 @@ public class FloatNumber {
             sing = true;
         }
 
-        for (int i = 0; num1[i] != '.' || i<=num1.length; i++){
+        for (int i = 0; num1[i] != '.' || i<num1.length; i++){
             count++;
         }
         for(int i = 0; num1[i] !='E' || i<num1.length; i++) {
