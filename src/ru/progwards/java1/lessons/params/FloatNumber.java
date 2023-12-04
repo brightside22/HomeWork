@@ -5,7 +5,7 @@ import java.util.Arrays;
 public class FloatNumber {
     public boolean sing;
     public long mantissa;
-    public  int exp;
+    public int exp;
     public String num;
 
     FloatNumber(boolean sing, long mantissa, int exp) {
@@ -13,59 +13,36 @@ public class FloatNumber {
         this.mantissa = mantissa;
         this.exp = exp;
     }
-    FloatNumber(String num) {
-
+    public FloatNumber(String num) {
         String exp1 = "";
         int count1 = 0;
-        this.num = num;
-        char [] num1 = num.toCharArray();
+        char[] num1 = num.toCharArray();
 
         if (num1[0] == '-') {
             sing = false;
-        }
-
-        else {
+        } else {
             sing = true;
         }
 
 
-        for (int i = 0; i<num1.length; i++) {
-            while (num1[i] != 'E') {
-                count1++;
-            }
-
-        }
-
-
-        if (count1 > 0) {
-            for (int i = count1; i < num1.length; i++) {
-                if (num1[count1-1] == '-') {
-                    exp1 += String.valueOf(num1[i]);
-                }
-
-                else {
-                    exp1 += String.valueOf(num1[i]);
-                }
-
+        for (int i = 0; i < num1.length; i++) {
+            if (num1[i] == 'E') {
+                count1 = i;
+                break;
             }
         }
 
-        if (num1[count1+1] == '-') {
-            exp = -1 * Integer.parseInt(exp1);
+        for (int i = count1 + 1; i < num1.length; i++) {
+            exp1 += num1[i];
         }
 
-        else {
-            exp = Integer.parseInt(exp1);
+        exp = Integer.parseInt(exp1);
+
+        for (int i = 0; i <= count1; i++) {
+            if (num1[i] != 'E') {
+                mantissa += num1[i];
+            }
         }
-
-
-        for(int i = 0; i <= count1; i++) {
-            if (num1[i] != 'E')
-            mantissa += num1[i];
-        }
-
-        FloatNumber num2 = new FloatNumber(sing, mantissa, exp);
-
     }
 
     public String toString(){
@@ -168,9 +145,10 @@ public class FloatNumber {
     }
 
     public static void main(String[] args) {
-        FloatNumber num1 = new FloatNumber(false, 123456789, 4);
-        String num = "-12345E2";
-        System.out.println(num1.toString());
-        System.out.println(new FloatNumber(num));
+       FloatNumber num1 = new FloatNumber(false, 123456789, 4);
+
+       System.out.println(num1.toString());
+
+
     }
 }
