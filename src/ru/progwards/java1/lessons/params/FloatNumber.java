@@ -14,11 +14,12 @@ public class FloatNumber {
         this.exp = exp;
     }
     FloatNumber(String num) {
+
         String exp1 = "";
         int count = 0;
         int count1 = 0;
         this.num = num;
-        char [] num1 =num.toCharArray();
+        char [] num1 = num.toCharArray();
 
         if (num1[0] == '-') {
             sing = false;
@@ -72,22 +73,29 @@ public class FloatNumber {
     public String toString(){
 
         int count = 0;
-        String str1 = null;
+        String str1 = "";
 
-        char [] str = num.toCharArray();
-        str1 = num;
-
+        String Smant = (String.valueOf(mantissa));
 
 
-        if (str[0] == '-') {
-            sing = false;
-            return  "-" + str1 +"E"+exp;
+        char [] Cmant = Smant.toCharArray();
+
+
+        char [] num1 = new char[ (Smant.length()) + 1 ];
+        for (int i = 0; i < Cmant.length; i++) {
+            if (sing == false) {
+                num1[0] = '-';
+                num1[i+1] = Cmant[i];
+            }
+            else {
+                num1[i] = Cmant[i];
+            }
         }
 
-        else {
-            sing = true;
-            return str1;
+        for (int i = 0; i < num1.length; i++) {
+            str1 += num1[i];
         }
+        return str1 + "E" + exp;
     }
 
     public double toDouble() {
@@ -162,8 +170,9 @@ public class FloatNumber {
     }
 
     public static void main(String[] args) {
-        FloatNumber num1 = new FloatNumber(true, 1245, 2);
-        System.out.println(num1.toString());
+        FloatNumber num = new FloatNumber(false, 1245, 2);
+        //FloatNumber num = "12345";
+        System.out.println(num.toString());
         System.out.println();
     }
 }
