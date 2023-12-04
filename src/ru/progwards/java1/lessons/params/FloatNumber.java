@@ -16,7 +16,6 @@ public class FloatNumber {
     FloatNumber(String num) {
 
         String exp1 = "";
-        int count = 0;
         int count1 = 0;
         this.num = num;
         char [] num1 = num.toCharArray();
@@ -29,26 +28,23 @@ public class FloatNumber {
             sing = true;
         }
 
-        for (int i = 0; num1[i] != '.' || i<num1.length; i++){
-            count++;
-        }
-        for(int i = 0; num1[i] !='E' || i<num1.length; i++) {
-            count1++;
-        }
 
-        for (int i = count + 1; i < num1.length; i++) {
+        for (int i = 0; i<num1.length; i++) {
+            while (num1[i] != 'E') {
+                count1++;
+            }
 
         }
 
 
-            if (count1 > 0) {
-            for (int i = count1 + 1; i < num1.length; i++) {
-                if (num1[count1+1] == '-') {
-                    exp1 += String.valueOf(num1[i+1]);
+        if (count1 > 0) {
+            for (int i = count1; i < num1.length; i++) {
+                if (num1[count1-1] == '-') {
+                    exp1 += String.valueOf(num1[i]);
                 }
 
                 else {
-                    exp1 = String.valueOf(num1[i]);
+                    exp1 += String.valueOf(num1[i]);
                 }
 
             }
@@ -64,9 +60,11 @@ public class FloatNumber {
 
 
         for(int i = 0; i <= count1; i++) {
-            if (num1[i] != '.')
+            if (num1[i] != 'E')
             mantissa += num1[i];
         }
+
+        FloatNumber num2 = new FloatNumber(sing, mantissa, exp);
 
     }
 
@@ -170,9 +168,9 @@ public class FloatNumber {
     }
 
     public static void main(String[] args) {
-        FloatNumber num = new FloatNumber(false, 1245, 2);
-        //FloatNumber num = "12345";
-        System.out.println(num.toString());
-        System.out.println();
+        FloatNumber num1 = new FloatNumber(false, 123456789, 4);
+        String num = "-12345E2";
+        System.out.println(num1.toString());
+        System.out.println(new FloatNumber(num));
     }
 }
