@@ -37,15 +37,20 @@ public class FloatNumber {
 
         exp = Integer.parseInt(exp1);
 
+        String mant = "";
+
         for (int i = 0; i <= count1; i++) {
-            if (num1[i] != 'E') {
-                mantissa += num1[i];
+            if (num1[i] != 'E' & num1[i] != '.') {
+                mant += num1[i];
             }
         }
+        mantissa = Long.valueOf(mant);
     }
 
     public String toString() {
             int count = 0;
+            int exp1 = exp;
+            long m = this.mantissa;
             String str1 = "";
             String Smant = String.valueOf(mantissa);
 
@@ -86,6 +91,7 @@ public class FloatNumber {
         int count = 0;
         String str1 = "";
         String Smant = String.valueOf(mantissa);
+
 
         char[] Cmant = Smant.toCharArray();
         char[] num1 = new char[Smant.length() + 1];
@@ -140,24 +146,7 @@ public class FloatNumber {
     }
 
      void negative() {
-        if (sing == true)
-        {sing = false;}
-        else
-        {sing = true;}
-
-        char [] str = num.toCharArray();
-        if (str[0] == '-') {
-            for( int i = 0; i<str.length-1; i++){
-                str[i] = str[i+1];
-            }
-        }
-
-        else {
-            for (int i = 1; i<str.length; i++) {
-                str[i] = str[i-1];
-                str[0] = '-';
-            }
-        }
+         sing = !sing;
     }
 
 
@@ -179,12 +168,12 @@ public class FloatNumber {
     }
 
     public static void main(String[] args) {
-       FloatNumber num = new FloatNumber (true, 12001, 4);
-        FloatNumber num2 = new FloatNumber (true, 12004, 3);
+       FloatNumber num3 = new FloatNumber ("4.767E2");
 
-       System.out.println(num.toString());
-       System.out.println(num.toDouble());
-        System.out.println(num.add(num2));
+
+       System.out.println(num3.toString());
+       System.out.println(num3.toDouble());
+
 
 
 
