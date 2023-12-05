@@ -122,7 +122,7 @@ public class FloatNumber {
             str1 += num1[i];
         }
 
-        String str2 = str1 + "E" + (exp - 1);
+        String str2 = str1 + "E" + (exp);
 
         return Double.parseDouble(str2);
     }
@@ -151,13 +151,12 @@ public class FloatNumber {
 
 
     public FloatNumber add(FloatNumber num) {
-        FloatNumber result = new FloatNumber(true, 0, 0);
 
         double tDouble = this.toDouble();
         double nDouble = num.toDouble();
         double sum = tDouble + nDouble;
 
-        result.fromDouble(sum);
+        FloatNumber result = new FloatNumber(true, (long) sum, 0);
         return result;
     }
 
@@ -168,11 +167,13 @@ public class FloatNumber {
     }
 
     public static void main(String[] args) {
-       FloatNumber num3 = new FloatNumber ("4.767E2");
+       FloatNumber num3 = new FloatNumber ("29343E4");
+       FloatNumber num4 = new FloatNumber(true, 120001, 3);
 
 
        System.out.println(num3.toString());
        System.out.println(num3.toDouble());
+        System.out.println(num3.sub(num4));
 
 
 
