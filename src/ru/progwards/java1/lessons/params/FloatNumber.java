@@ -170,9 +170,9 @@ public class FloatNumber {
        FloatNumber num3 = new FloatNumber ("29343E4");
        FloatNumber num4 = new FloatNumber(true, 120001, 3);
 
-
        System.out.println(num3.toString());
        System.out.println(num3.toDouble());
+        System.out.println(num3.add(num4));
         System.out.println(num3.sub(num4));
 
 
