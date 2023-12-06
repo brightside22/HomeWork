@@ -172,8 +172,8 @@ public class FloatNumber {
 
        System.out.println(num3.toString());
        System.out.println(num3.toDouble());
-        System.out.println(num3.add(num4));
-        System.out.println(num3.sub(num4));
+       System.out.println(num3.add(num4));
+       System.out.println(num3.sub(num4));
 
 
 
