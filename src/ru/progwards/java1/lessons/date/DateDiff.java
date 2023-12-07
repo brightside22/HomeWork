@@ -18,12 +18,13 @@ public class DateDiff {
         long year = (result / ( 31536000000L));
         long month = (result % (31536000000L) ) /(2628000000L);
         long days = ((result % (31536000000L) ) % (2628000000L)) / 86400000L;
-        long min = (((result % (31536000000L) ) % (2628000000L) ) % 86400000L) / 60000;
-        long sec = ((((result % (31536000000L) ) % (2628000000L) ) % 86400000L)  % 60000) / 1000;
-        long milsec = ((((result % (31536000000L) ) % (2628000000L) ) % 86400000L)  % 60000) % 1000;
+        long hours = ((((result % (31536000000L) ) % (2628000000L)) % 86400000) / 3600000);
+        long min = (((((result % (31536000000L) ) % (2628000000L)) % 86400000)  % 3600000)/ 60000);
+        long sec = (((((result % (31536000000L) ) % (2628000000L)) % 86400000)  % 3600000) % 60000) / 1000;
+        long milsec = (((((result % (31536000000L) ) % (2628000000L)) % 86400000)  % 3600000) % 60000) % 1000;
 
         System.out.println("Между " + date1 + " и " + date2 + " " + year + "лет, " + month + " месяцев, "
-                + days + " дней, " + min + " минут, " +  sec  + " секунд, " + milsec + "  миллисекунд");
+                + days + " дней, "  + hours + " часов, " + min + " минут, " +  sec  + " секунд, " + milsec + "  миллисекунд");
     }
 
     public static void timeToBirthday(Date now, Date birthday) {
@@ -36,7 +37,8 @@ public class DateDiff {
         long min = cMin(result);
         long sec = cSec(result);
         long milsec = cMilSec(result);
-        System.out.println("До дня рождения " + month + " месяцев, " + days + " дней, " + min + " минут, " +
+        long hours = cHours(result);
+        System.out.println("До дня рождения " + month + " месяцев, " + days + " дней, " + hours + " часов, " + min + " минут, " +
                 sec  + " секунд, " + milsec + "  миллисекунд");
     }
 
@@ -44,6 +46,7 @@ public class DateDiff {
         long year;
         long month ;
         long days ;
+        long hours;
         long min ;
         long sec;
         long milsec ;
@@ -59,11 +62,12 @@ public class DateDiff {
         year = cYear(average);
         month = cMonths(average);
         days = cDays(average);
+        hours = cHours(average);
         min = cMin(average);
         sec = cSec(average);
         milsec = cMilSec(average);
 
-        System.out.println("Среднее время между событиями " + year + " лет, " + month + " месяцев, " + days + " дней, " + min + " минут, " +
+        System.out.println("Среднее время между событиями " + year + " лет, " + month + " месяцев, " + days + " дней, " + hours + " часов, "+ min + " минут, " +
                 sec  + " секунд, " + milsec + "  миллисекунд");
     }
 
@@ -77,6 +81,10 @@ public class DateDiff {
 
     public static long cDays(long result) {
         return (result % (31536000000L) ) % (2628000000L) / 86400000L;
+    }
+
+    public static long cHours(long result) {
+        return  ((((result % (31536000000L) ) % (2628000000L)) % 86400000) / 3600000);
     }
 
     public static long cMin(long result) {
