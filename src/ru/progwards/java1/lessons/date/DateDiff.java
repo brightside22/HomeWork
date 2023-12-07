@@ -15,13 +15,13 @@ public class DateDiff {
         long d1 =  date1.getTime();
         long d2 =  date2.getTime();
         long result = Math.abs(d2 - d1);
-        long year = (result / ( 31536000000L));
-        long month = (result % (31536000000L) ) /(2628000000L);
-        long days = ((result % (31536000000L) ) % (2628000000L)) / 86400000L;
-        long hours = ((((result % (31536000000L) ) % (2628000000L)) % 86400000) / 3600000);
-        long min = (((((result % (31536000000L) ) % (2628000000L)) % 86400000)  % 3600000)/ 60000);
-        long sec = (((((result % (31536000000L) ) % (2628000000L)) % 86400000)  % 3600000) % 60000) / 1000;
-        long milsec = (((((result % (31536000000L) ) % (2628000000L)) % 86400000)  % 3600000) % 60000) % 1000;
+        long year = cYear(result);
+        long month =cMonths(result);
+        long days = cDays(result);
+        long hours = cHours(result);
+        long min = cMin(result);
+        long sec = cSec(result);
+        long milsec = cMilSec(result);
 
         System.out.println("Между " + date1 + " и " + date2 + " " + year + "лет, " + month + " месяцев, "
                 + days + " дней, "  + hours + " часов, " + min + " минут, " +  sec  + " секунд, " + milsec + "  миллисекунд");
@@ -80,30 +80,31 @@ public class DateDiff {
     }
 
     public static long cDays(long result) {
-        return (result % (31536000000L) ) % (2628000000L) / 86400000L;
+        return ((result % (31536000000L) ) % (2628000000L)) / 86400000;
     }
 
     public static long cHours(long result) {
-        return  ((((result % (31536000000L) ) % (2628000000L)) % 86400000) / 3600000);
+        return  (((result % 31536000000L ) % 2628000000L) % 86400000L) / 3600000L;
     }
 
     public static long cMin(long result) {
-        return  ((result % (31536000000L) ) % (2628000000L)  % 86400000L) / 60000;
+        return  (((((result % (31536000000L) ) % (2628000000L)) % 86400000L)  % 3600000L)/ 60000L);
     }
 
     public static long cSec(long result) {
-        return ((result % (31536000000L) ) % (2628000000L))  % 86400000L % 60000 / 1000;
+        return (((((result % (31536000000L) ) % (2628000000L)) % 86400000L)  % 3600000L) % 60000L) / 1000L;
     }
 
     public static long cMilSec(long result) {
-        return ((result % (31536000000L) ) % (2628000000L))  % 86400000L % 60000  % 1000;
+        return (((((result % (31536000000L) ) % (2628000000L)) % 86400000L)  % 3600000L) % 60000L) % 1000L;
     }
 
     public static void main(String[] args) {
         Date date1 = new Date();
         Date date2 = new Date();
-        date2.setYear(date2.getYear()+3);
-        date2.setMonth(date2.getMonth() +4);
+        date2.setYear(date2.getYear()+12);
+        date2.setMonth(date2.getMonth() +8);
+        date2.setHours(date2.getHours() +10 );
         timeBetween(date1, date2);
 
     }
