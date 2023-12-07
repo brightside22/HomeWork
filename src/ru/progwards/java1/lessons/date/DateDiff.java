@@ -17,10 +17,10 @@ public class DateDiff {
         long result = Math.abs(d2 - d1);
         long year = (result / ( 31536000000L));
         long month = (result % (31536000000L) ) /(2628000000L);
-        long days = (result % (31536000000L) ) % (2628000000L) / 86400000L;
-        long min = ((result % (31536000000L) ) % (2628000000L)  % 86400000L) / 60000;
-        long sec = ((result % (31536000000L) ) % (2628000000L))  % 86400000L % 60000 / 1000;
-        long milsec = ((result % (31536000000L) ) % (2628000000L))  % 86400000L % 60000  % 1000;
+        long days = ((result % (31536000000L) ) % (2628000000L)) / 86400000L;
+        long min = (((result % (31536000000L) ) % (2628000000L) ) % 86400000L) / 60000;
+        long sec = ((((result % (31536000000L) ) % (2628000000L) ) % 86400000L)  % 60000) / 1000;
+        long milsec = ((((result % (31536000000L) ) % (2628000000L) ) % 86400000L)  % 60000) % 1000;
 
         System.out.println("Между " + date1 + " и " + date2 + " " + year + "лет, " + month + " месяцев, "
                 + days + " дней, " + min + " минут, " +  sec  + " секунд, " + milsec + "  миллисекунд");
@@ -94,9 +94,8 @@ public class DateDiff {
     public static void main(String[] args) {
         Date date1 = new Date();
         Date date2 = new Date();
-        date2.setYear(date2.getYear()+10);
-        date2.setMinutes(date2.getMinutes() + 10);
-        date2.setMonth(date2.getMonth() + 10);
+        date2.setYear(date2.getYear()+3);
+        date2.setMonth(date2.getMonth() +4);
         timeBetween(date1, date2);
 
     }
