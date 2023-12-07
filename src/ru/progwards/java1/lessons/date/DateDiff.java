@@ -56,7 +56,7 @@ public class DateDiff {
 
         for( int i = 1; i<events.length; i++) {
             all = events[0].getTime();
-            all1 -= events[i].getTime();
+            all1 += events[i].getTime();
         }
         average = all / events.length;
         year = cYear(average);
