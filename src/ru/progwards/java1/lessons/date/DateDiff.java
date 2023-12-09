@@ -58,14 +58,14 @@ public class DateDiff {
             all = events[0].getTime();
             all1 += events[i].getTime();
         }
-        average = all / events.length;
-        year = cYear(average);
-        month = cMonths(average);
-        days = cDays(average);
-        hours = cHours(average);
-        min = cMin(average);
-        sec = cSec(average);
-        milsec = cMilSec(average);
+        average = all;
+        year = cYear(average)/events.length;
+        month = cMonths(average)/events.length;
+        days = cDays(average)/events.length;
+        hours = cHours(average)/events.length;
+        min = cMin(average)/events.length;
+        sec = cSec(average)/events.length;
+        milsec = cMilSec(average)/events.length;
 
         System.out.println("Среднее время между событиями " + year + " лет, " + month + " месяцев, " + days + " дней, " + hours + " часов, "+ min + " минут, " +
                 sec  + " секунд, " + milsec + "  миллисекунд");
