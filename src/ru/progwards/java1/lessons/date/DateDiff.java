@@ -23,7 +23,7 @@ public class DateDiff {
         long sec = cSec(result);
         long milsec = cMilSec(result);
 
-        System.out.println("Между " + date1 + " и " + date2 + " " + year + "лет, " + month + " месяцев, "
+        System.out.println("Между " + "date1"+ " и " + "date2" + " " + year + "лет, " + month + " месяцев, "
                 + days + " дней, "  + hours + " часов, " + min + " минут, " +  sec  + " секунд, " + milsec + "  миллисекунд");
     }
 
@@ -58,14 +58,14 @@ public class DateDiff {
             all = events[0].getTime();
             all1 += events[i].getTime();
         }
-        average = all;
-        year = cYear(average)/events.length;
-        month = cMonths(average)/events.length;
-        days = cDays(average)/events.length;
-        hours = cHours(average)/events.length;
-        min = cMin(average)/events.length;
-        sec = cSec(average)/events.length;
-        milsec = cMilSec(average)/events.length;
+        average = all/events.length;
+        year = cYear(average);
+        month = cMonths(average);
+        days = cDays(average);
+        hours = cHours(average);
+        min = cMin(average);
+        sec = cSec(average);
+        milsec = cMilSec(average);
 
         System.out.println("Среднее время между событиями " + year + " лет, " + month + " месяцев, " + days + " дней, " + hours + " часов, "+ min + " минут, " +
                 sec  + " секунд, " + milsec + "  миллисекунд");
