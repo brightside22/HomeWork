@@ -58,7 +58,7 @@ public class DateDiff {
             all = events[0].getTime();
             all1 += events[i].getTime();
         }
-        average = all/events.length;
+        average = all;
         year = cYear(average);
         month = cMonths(average);
         days = cDays(average);
@@ -80,7 +80,7 @@ public class DateDiff {
     }
 
     public static long cDays(long result) {
-        return ((result % (31536000000L) ) % (2628000000L)) / 86400000;
+        return ((result % (31536000000L) ) % (2628000000L))/ 86400000;
     }
 
     public static long cHours(long result) {
@@ -102,9 +102,21 @@ public class DateDiff {
     public static void main(String[] args) {
         Date date1 = new Date();
         Date date2 = new Date();
-        date2.setYear(date2.getYear()+12);
-        date2.setMonth(date2.getMonth() +8);
-        date2.setHours(date2.getHours() +10 );
+        date2.setYear(2039);
+        date2.setMonth(1);
+        date2.setDate(8);
+        date2.setHours(21);
+        date2.setMinutes(56);
+        date2.setSeconds(07);
+
+        date1.setYear(1976);
+        date1.setMonth(9);
+        date1.setDate(24);
+        date2.setHours(20);
+        date2.setMinutes(48);
+        date2.setSeconds(32);
+
+
         timeBetween(date1, date2);
 
     }
