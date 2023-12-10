@@ -5,7 +5,6 @@ import java.util.Calendar;
 public class DateDiff {
 
     private final Date date;
-    long result;
 
     public DateDiff(Date date) {
         this.date = date;
@@ -114,7 +113,7 @@ public class DateDiff {
         date1.setDate(24);
         date2.setHours(20);
         date2.setMinutes(48);
-        date2.setSeconds(32);
+        date2.setSeconds(07);
 
 
         timeBetween(date1, date2);
