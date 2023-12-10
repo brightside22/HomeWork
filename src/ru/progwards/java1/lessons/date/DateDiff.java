@@ -57,7 +57,7 @@ public class DateDiff {
             all = events[0].getTime();
             all1 += events[i].getTime();
         }
-        average = all;
+        average = all + all1/events.length;
         year = cYear(average);
         month = cMonths(average);
         days = cDays(average);
@@ -101,22 +101,29 @@ public class DateDiff {
     public static void main(String[] args) {
         Date date1 = new Date();
         Date date2 = new Date();
-        date2.setYear(2039);
-        date2.setMonth(1);
-        date2.setDate(8);
-        date2.setHours(21);
-        date2.setMinutes(56);
-        date2.setSeconds(07);
 
-        date1.setYear(1976);
-        date1.setMonth(9);
-        date1.setDate(24);
-        date2.setHours(20);
+        date1.setYear(2089-1900);
+        date1.setMonth(10);
+        date1.setDate(22);
+        date2.setHours(13);
+        date2.setMinutes(30);
+        date2.setSeconds(37);
+
+
+        date2.setYear(2083-1900);
+        date2.setMonth(6);
+        date2.setDate(11);
+        date2.setHours(6);
         date2.setMinutes(48);
-        date2.setSeconds(07);
+        date2.setSeconds(39);
+
+
 
 
         timeBetween(date1, date2);
+        System.out.println(date1);
+        System.out.println(date2);
+
 
     }
 
