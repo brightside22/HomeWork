@@ -132,7 +132,7 @@ public class CalendarPrint {
 
 
         System.out.println(year +" "+month1);
-        System.out.println("пн вт ср чт пт сб вс");
+        System.out.println("ПН ВТ СР ЧТ ПТ СБ ВС");
         System.out.println(week1);
         System.out.println(week2);
         System.out.println(week3);
