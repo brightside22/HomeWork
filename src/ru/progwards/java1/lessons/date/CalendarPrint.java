@@ -32,34 +32,33 @@ public class CalendarPrint {
         }
 
 
-        int m1 = month;
-        int w = 0;
+
         int m = 0;
 
         if (month == 1) {
-            m = 11;
+            m = 13;
         } else if (month == 2) {
-            m = 12;
+            m = 13;
         } else if (month == 3) {
-            m = 1;
-        } else if (month == 4) {
-            m = 2;
-        } else if (month == 5) {
             m = 3;
-        } else if (month == 6) {
+        } else if (month == 4) {
             m = 4;
-        } else if (month == 7) {
+        } else if (month == 5) {
             m = 5;
-        } else if (month == 8) {
+        } else if (month == 6) {
             m = 6;
-        } else if (month == 9) {
+        } else if (month == 7) {
             m = 7;
-        } else if (month == 10) {
+        } else if (month == 8) {
             m = 8;
-        } else if (month == 11) {
+        } else if (month == 9) {
             m = 9;
-        } else if (month == 12) {
+        } else if (month == 10) {
             m = 10;
+        } else if (month == 11) {
+            m = 11;
+        } else if (month == 12) {
+            m = 12;
         }
 
 
@@ -80,10 +79,14 @@ public class CalendarPrint {
 
         int day1 = 0;
         if (month == 1 || month == 2) {
-            day1 = Math.abs((1 + ((13 * m - 1) / 5) + y + (y / 4) + (c / 4) - (2 * c)) % 7 - 1);
-        } else {
-            day1 = Math.abs((1 + ((13 * m - 1) / 5) + y + (y / 4) + (c / 4) - (2 * c)) % 7);
+            year = year - 1;
         }
+
+        int K = year % 100;
+        int J = year / 100;
+            day1 = Math.abs(((1 + (13 * (m + 1) )/ 5) + K + (K / 4) + (J/4)  + (5 * J)) % 7);
+
+
 
         int yearYesNo = 0;
         if (year % 400 == 0 || year % 4 == 0) {
@@ -125,10 +128,12 @@ public class CalendarPrint {
         }
 
 
-        int days = Math.abs(day1 - 1);
-        if (day1 == 0) {
-            days = 5;
-        }
+        int days = 0;
+         days = Math.abs(day1-2);
+            if (day1 == 0) {
+                days = 6;
+            }
+
 
         int count = 0;
         String week1 = "";
@@ -168,8 +173,8 @@ public class CalendarPrint {
         }
         if (DaysInMonth == 31 & day1 == 6) {
             week6 = " 31";
-        } else if (DaysInMonth == 31 & day1 == 7) {
-            week6 = "30" + "  " + "31";
+        }else if (DaysInMonth == 31 & days == 6) {
+            week6 = "30"  + " 31";
         }
 
 
@@ -188,6 +193,6 @@ public class CalendarPrint {
 
 
     public static void main(String[] args) {
-        printMonth(3, 1977);
+        printMonth(10, 2058);
     }
 }
