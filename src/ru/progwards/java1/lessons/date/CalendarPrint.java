@@ -1,5 +1,7 @@
 package ru.progwards.java1.lessons.date;
 
+import java.util.Calendar;
+
 public class CalendarPrint {
 
     public static void printMonth(int month, int year) {
@@ -30,61 +32,6 @@ public class CalendarPrint {
         } else if (month == 12) {
             month1 = "Декабрь";
         }
-
-
-
-        int m = 0;
-
-        if (month == 1) {
-            m = 13;
-        } else if (month == 2) {
-            m = 13;
-        } else if (month == 3) {
-            m = 3;
-        } else if (month == 4) {
-            m = 4;
-        } else if (month == 5) {
-            m = 5;
-        } else if (month == 6) {
-            m = 6;
-        } else if (month == 7) {
-            m = 7;
-        } else if (month == 8) {
-            m = 8;
-        } else if (month == 9) {
-            m = 9;
-        } else if (month == 10) {
-            m = 10;
-        } else if (month == 11) {
-            m = 11;
-        } else if (month == 12) {
-            m = 12;
-        }
-
-
-        int y = 0;
-        if (month == 1 || month == 2) {
-            y = year % 100 - 1;
-        } else {
-            y = year % 100;
-        }
-
-
-        int c = 0;
-        if (month == 1 || month == 2) {
-            c = year / 100 - 1;
-        } else {
-            c = year / 100;
-        }
-
-        int day1 = 0;
-        if (month == 1 || month == 2) {
-            year = year - 1;
-        }
-
-        int K = year % 100;
-        int J = year / 100;
-            day1 = Math.abs(((1 + (13 * (m + 1) )/ 5) + K + (K / 4) + (J/4)  + (5 * J)) % 7);
 
 
 
@@ -128,13 +75,16 @@ public class CalendarPrint {
         }
 
 
-        int days = 0;
-         days = Math.abs(day1-2);
-            if (day1 == 0) {
-                days = 6;
-            }
+        Calendar calendar = Calendar.getInstance();
+        int m = month - 1;
+        calendar.set(year, m, 1);
+        int day1 = calendar.get(Calendar.DAY_OF_WEEK);
 
 
+        int days = day1-2;
+        if (days == -1) {
+            days = 6;
+        }
         int count = 0;
         String week1 = "";
         String week2 = "";
@@ -193,6 +143,6 @@ public class CalendarPrint {
 
 
     public static void main(String[] args) {
-        printMonth(10, 2058);
+        printMonth(6, 2024);
     }
 }
