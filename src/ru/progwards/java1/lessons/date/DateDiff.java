@@ -1,6 +1,6 @@
 package ru.progwards.java1.lessons.date;
 import java.util.Date;
-import java.util.Calendar;
+
 
 public class DateDiff {
 
@@ -51,13 +51,16 @@ public class DateDiff {
         long milsec ;
         long all = 0;
         long all1 = 0;
-        long average;
 
-        for( int i = 1; i<events.length; i++) {
-            all = events[0].getTime();
-            all1 += events[i].getTime();
+        long totalDifference = 0;
+
+
+        for (int i = 0; i < events.length - 1; i++) {
+            long diff = events[i + 1].getTime() - events[i].getTime();
+            totalDifference += diff;
         }
-        average = all + all1/events.length;
+
+        long average = totalDifference / (events.length - 1);
         year = cYear(average);
         month = cMonths(average);
         days = cDays(average);
