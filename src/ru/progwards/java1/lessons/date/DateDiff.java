@@ -13,62 +13,34 @@ public class DateDiff {
         this.date = date;
     }
 
-    public static void timeBetween(Calendar date1, Calendar date2) {
+    public static void timeBetween(Date date1, Date date2) {
 
-        long year = cYear(date1, date2);
-        long month =cMonths(date1, date2);
-        long days = cDays(date1, date2);
-        long hours = cHours(date1, date2);
-        long min = cMin(date1, date2);
-        long sec = cSec(date1, date2);
-        long milsec = cMilSec(date1, date2);
+        long year = cYear(toCalendar(date1), toCalendar(date2));
+        long month =cMonths(toCalendar(date1), toCalendar(date2));
+        long days = cDays(toCalendar(date1), toCalendar(date2));
+        long hours = cHours(toCalendar(date1), toCalendar(date2));
+        long min = cMin(toCalendar(date1), toCalendar(date2));
+        long sec = cSec(toCalendar(date1), toCalendar(date2));
+        long milsec = cMilSec(toCalendar(date1), toCalendar(date2));
 
         System.out.println("Между " + "date1"+ " и " + "date2" + " " + year + "лет, " + month + " месяцев, "
                 + days + " дней, "  + hours + " часов, " + min + " минут, " +  sec  + " секунд, " + milsec + "  миллисекунд");
     }
 
-    public static void diffDate(int[] timeDiff, Calendar date1, Calendar date2){
-        timeDiff[6] = (date2.get(Calendar.MILLISECOND) - date1.get(Calendar.MILLISECOND)) ; // ms
-        if (timeDiff[6] < 0) {
-            timeDiff[6] += 1000;
-            timeDiff[5] = -1;
-        }
-        timeDiff[5] += (date2.get(Calendar.SECOND) - date1.get(Calendar.SECOND)) ; // sec
-        if (timeDiff[5] < 0) {
-            timeDiff[5] += 60;
-            timeDiff[4] = -1;
-        }
-        timeDiff[4] += (date2.get(Calendar.MINUTE) - date1.get(Calendar.MINUTE)); // min
-        if (timeDiff[4] < 0) {
-            timeDiff[4] += 60;
-            timeDiff[3] = -1;
-        }
-        timeDiff[3] += (date2.get(Calendar.HOUR_OF_DAY) - date1.get(Calendar.HOUR_OF_DAY)); // hour
-        if (timeDiff[3] < 0) {
-            timeDiff[3] += 24;
-            timeDiff[2] = -1;
-        }
-        timeDiff[2] += (date2.get(Calendar.DATE) - date1.get(Calendar.DATE)) ; // day
-        if (timeDiff[2] < 0) {
-            timeDiff[2] += 30;
-            timeDiff[1] = -1;
-        }
-        timeDiff[1] += (date2.get(Calendar.MONTH) - date1.get(Calendar.MONTH)) ; // month
-        if (timeDiff[1] < 0) {
-            timeDiff[1] += 12;
-            timeDiff[0] = -1;
-        }
-        timeDiff[0] += (date2.get(Calendar.YEAR) - date1.get(Calendar.YEAR)) ; // year
-
+    public static Calendar toCalendar(Date date){
+        Calendar cal = Calendar.getInstance();
+        cal.setTime(date);
+        return cal;
     }
 
-    public static void timeToBirthday(Calendar now, Calendar birthday) {
-        long month = cMonths(now, birthday);
-        long days = cDays(now, birthday);
-        long min = cMin(now, birthday);
-        long sec = cSec(now, birthday);
-        long milsec = cMilSec(now, birthday);
-        long hours = cHours(now, birthday);
+
+    public static void timeToBirthday(Date now, Date birthday) {
+        long month = cMonths(toCalendar(now), toCalendar(birthday));
+        long days = cDays(toCalendar(now), toCalendar(birthday));
+        long min = cMin(toCalendar(now), toCalendar(birthday));
+        long sec = cSec(toCalendar(now), toCalendar(birthday));
+        long milsec = cMilSec(toCalendar(now), toCalendar(birthday));
+        long hours = cHours(toCalendar(now), toCalendar(birthday));
         System.out.println("До дня рождения " + month + " месяцев, " + days + " дней, " + hours + " часов, " + min + " минут, " +
                 sec  + " секунд, " + milsec + "  миллисекунд");
     }
