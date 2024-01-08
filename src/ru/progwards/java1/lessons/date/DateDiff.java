@@ -75,12 +75,12 @@ public class DateDiff {
 
 
     public static long cYear(Calendar date1, Calendar date2) {
-        int[] timeDiff = new int[0];
+        long[] timeDiff = new long[1];
         timeDiff[0] += (date2.get(Calendar.YEAR) - date1.get(Calendar.YEAR)) ;
         return Long.valueOf(Arrays.toString(timeDiff)); // year
     }
     public static long cMonths(Calendar date1, Calendar date2) {
-        int[] timeDiff = new int[0];
+        long[] timeDiff = new long[2];
         timeDiff[1] += (date2.get(Calendar.MONTH) - date1.get(Calendar.MONTH)) ; // month
         if (timeDiff[1] < 0) {
             timeDiff[1] += 12;
@@ -90,7 +90,7 @@ public class DateDiff {
     }
 
     public static long cDays( Calendar date1, Calendar date2) {
-        int[] timeDiff = new int[0];
+        long[] timeDiff = new long[3];
         timeDiff[2] += (date2.get(Calendar.DATE) - date1.get(Calendar.DATE)); // day
         if (timeDiff[2] < 0) {
             timeDiff[2] += 30;
@@ -100,7 +100,7 @@ public class DateDiff {
     }
 
     public static long cHours( Calendar date1, Calendar date2) {
-        int[] timeDiff = new int[0];
+        long[] timeDiff = new long[4];
         timeDiff[3] += (date2.get(Calendar.HOUR_OF_DAY) - date1.get(Calendar.HOUR_OF_DAY)); // hour
         if (timeDiff[3] < 0) {
             timeDiff[3] += 24;
@@ -110,7 +110,7 @@ public class DateDiff {
     }
 
     public static long cMin( Calendar date1, Calendar date2) {
-        int[] timeDiff = new int[0];
+        long[] timeDiff = new long[5];
         timeDiff[4] += (date2.get(Calendar.MINUTE) - date1.get(Calendar.MINUTE)); // min
         if (timeDiff[4] < 0) {
             timeDiff[4] += 60;
@@ -120,7 +120,7 @@ public class DateDiff {
     }
 
     public static long cSec( Calendar date1, Calendar date2) {
-        int[] timeDiff = new int[0];
+        long[] timeDiff = new long[6];
         timeDiff[5] += (date2.get(Calendar.SECOND) - date1.get(Calendar.SECOND)) ; // sec
         if (timeDiff[5] < 0) {
             timeDiff[5] += 60;
@@ -130,7 +130,7 @@ public class DateDiff {
     }
 
     public static long cMilSec( Calendar date1, Calendar date2) {
-        int[] timeDiff = new int[0];
+        long[] timeDiff = new long[7];
         timeDiff[6] = (date2.get(Calendar.MILLISECOND) - date1.get(Calendar.MILLISECOND)) ; // ms
         if (timeDiff[6] < 0) {
             timeDiff[6] += 1000;
@@ -158,8 +158,7 @@ public class DateDiff {
         date2.setMinutes(48);
         date2.setSeconds(39);
 
-
-
+       timeBetween(date1, date2);
 
 
     }
