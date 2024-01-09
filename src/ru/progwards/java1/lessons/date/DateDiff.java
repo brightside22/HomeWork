@@ -57,13 +57,13 @@ public class DateDiff {
 
         long milliseconds = average % 1000;
         average /= 1000;
-        long seconds = (average % 60);
+        long seconds = (average % 60)-1;
         average /= 60;
-        long minutes = (average % 60);
+        long minutes = (average % 60)-1;
         average /= 60;
-        long hours = (average % 24);
+        long hours = (average % 24)-1;
         average /= 24;
-        long days = (average % 30);
+        long days = (average % 30)-1;
         average /= 30;
         long months = average % 12;
         long years = average / 12;
@@ -85,8 +85,8 @@ public class DateDiff {
             timeDiff[0] = -1;
         }
 
-        int str = Integer.parseInt(String.valueOf(timeDiff[1])) - Integer.parseInt(String.valueOf(timeDiff[0]));
-        return String.valueOf(str);
+        String str = String.valueOf(timeDiff[1]);
+        return str;
     }
 
     public static String cDays( Calendar date1, Calendar date2) {
@@ -96,8 +96,8 @@ public class DateDiff {
             timeDiff[2] += 30;
             timeDiff[1] = -1;
         }
-        int str = Integer.parseInt(String.valueOf(timeDiff[2])) - Integer.parseInt(String.valueOf(timeDiff[1]));
-        return String.valueOf(str);
+       String str = String.valueOf(timeDiff[2]);
+        return str;
     }
 
     public static String cHours( Calendar date1, Calendar date2) {
@@ -107,8 +107,8 @@ public class DateDiff {
             timeDiff[3] += 24;
             timeDiff[2] = -1;
         }
-        int str = Integer.parseInt(String.valueOf(timeDiff[3])) - Integer.parseInt(String.valueOf(timeDiff[2]));
-        return String.valueOf(str);
+        String str = String.valueOf(timeDiff[3]);
+        return str;
     }
 
     public static String cMin( Calendar date1, Calendar date2) {
@@ -118,8 +118,8 @@ public class DateDiff {
             timeDiff[4] += 60;
             timeDiff[3] = -1;
         }
-        int str = Integer.parseInt(String.valueOf(timeDiff[4])) - Integer.parseInt(String.valueOf(timeDiff[3]));
-        return String.valueOf(str);
+        String str = String.valueOf(timeDiff[4]);
+        return str;
 
     }
 
@@ -131,8 +131,8 @@ public class DateDiff {
             timeDiff[4] = -1;
         }
 
-        int str = Integer.parseInt(String.valueOf(timeDiff[5])) - Integer.parseInt(String.valueOf(timeDiff[4]));
-        return String.valueOf(str);
+        String str = String.valueOf(timeDiff[5]);
+        return str;
 
     }
 
@@ -143,8 +143,8 @@ public class DateDiff {
             timeDiff[6] += 1000;
             timeDiff[5] = -1;
         }
-        int str = Integer.parseInt(String.valueOf(timeDiff[6])) - Integer.parseInt(String.valueOf(timeDiff[5]));
-        return String.valueOf(str);
+        String str = String.valueOf(timeDiff[6]);
+        return str;
 
     }
 
