@@ -16,14 +16,14 @@ public class DateDiff {
     public static void timeBetween(Date date1, Date date2) {
 
         long year = cYear(toCalendar(date1), toCalendar(date2));
-        long month =cMonths(toCalendar(date1), toCalendar(date2));
-        long days = cDays(toCalendar(date1), toCalendar(date2));
-        long hours = cHours(toCalendar(date1), toCalendar(date2));
-        long min = cMin(toCalendar(date1), toCalendar(date2));
-        long sec = cSec(toCalendar(date1), toCalendar(date2));
-        long milsec = cMilSec(toCalendar(date1), toCalendar(date2));
+        String month =cMonths(toCalendar(date1), toCalendar(date2));
+        long days = Long.parseLong(cDays(toCalendar(date1), toCalendar(date2)));
+        long hours = Long.parseLong(cHours(toCalendar(date1), toCalendar(date2)));
+        long min = Long.parseLong(cMin(toCalendar(date1), toCalendar(date2)));
+        long sec = Long.parseLong(cSec(toCalendar(date1), toCalendar(date2)));
+        long milsec = Long.parseLong(cMilSec(toCalendar(date1), toCalendar(date2)));
 
-        System.out.println("Между " + "date1"+ " и " + "date2" + " " + year + "лет, " + month + " месяцев, "
+        System.out.println("Между " + "date1"+ " и " + "date2" + " " + year + " лет, " + month + " месяцев, "
                 + days + " дней, "  + hours + " часов, " + min + " минут, " +  sec  + " секунд, " + milsec + "  миллисекунд");
     }
 
@@ -35,12 +35,12 @@ public class DateDiff {
 
 
     public static void timeToBirthday(Date now, Date birthday) {
-        long month = cMonths(toCalendar(now), toCalendar(birthday));
-        long days = cDays(toCalendar(now), toCalendar(birthday));
-        long min = cMin(toCalendar(now), toCalendar(birthday));
-        long sec = cSec(toCalendar(now), toCalendar(birthday));
-        long milsec = cMilSec(toCalendar(now), toCalendar(birthday));
-        long hours = cHours(toCalendar(now), toCalendar(birthday));
+        long month = Long.parseLong(cMonths(toCalendar(now), toCalendar(birthday)));
+        long days = Long.parseLong(cDays(toCalendar(now), toCalendar(birthday)));
+        long min = Long.parseLong(cMin(toCalendar(now), toCalendar(birthday)));
+        long sec = Long.parseLong(cSec(toCalendar(now), toCalendar(birthday)));
+        long milsec = Long.parseLong(cMilSec(toCalendar(now), toCalendar(birthday)));
+        long hours = Long.parseLong(cHours(toCalendar(now), toCalendar(birthday)));
         System.out.println("До дня рождения " + month + " месяцев, " + days + " дней, " + hours + " часов, " + min + " минут, " +
                 sec  + " секунд, " + milsec + "  миллисекунд");
     }
@@ -75,68 +75,77 @@ public class DateDiff {
 
 
     public static long cYear(Calendar date1, Calendar date2) {
-        long[] timeDiff = new long[1];
-        timeDiff[0] += (date2.get(Calendar.YEAR) - date1.get(Calendar.YEAR)) ;
-        return Long.valueOf(Arrays.toString(timeDiff)); // year
+        return Math.abs(date2.get(Calendar.YEAR) - date1.get(Calendar.YEAR));
     }
-    public static long cMonths(Calendar date1, Calendar date2) {
+    public static String cMonths(Calendar date1, Calendar date2) {
         long[] timeDiff = new long[2];
         timeDiff[1] += (date2.get(Calendar.MONTH) - date1.get(Calendar.MONTH)) ; // month
         if (timeDiff[1] < 0) {
             timeDiff[1] += 12;
             timeDiff[0] = -1;
         }
-        return Long.valueOf(Arrays.toString(timeDiff));
+
+        String str = String.valueOf(timeDiff[1]);
+        return str;
     }
 
-    public static long cDays( Calendar date1, Calendar date2) {
+    public static String cDays( Calendar date1, Calendar date2) {
         long[] timeDiff = new long[3];
         timeDiff[2] += (date2.get(Calendar.DATE) - date1.get(Calendar.DATE)); // day
         if (timeDiff[2] < 0) {
             timeDiff[2] += 30;
             timeDiff[1] = -1;
         }
-        return Long.valueOf(Arrays.toString(timeDiff));
+       String str = String.valueOf(timeDiff[2]);
+        return str;
     }
 
-    public static long cHours( Calendar date1, Calendar date2) {
+    public static String cHours( Calendar date1, Calendar date2) {
         long[] timeDiff = new long[4];
         timeDiff[3] += (date2.get(Calendar.HOUR_OF_DAY) - date1.get(Calendar.HOUR_OF_DAY)); // hour
         if (timeDiff[3] < 0) {
             timeDiff[3] += 24;
             timeDiff[2] = -1;
         }
-        return Long.valueOf(Arrays.toString(timeDiff));
+        String str = String.valueOf(timeDiff[3]);
+        return str;
     }
 
-    public static long cMin( Calendar date1, Calendar date2) {
+    public static String cMin( Calendar date1, Calendar date2) {
         long[] timeDiff = new long[5];
         timeDiff[4] += (date2.get(Calendar.MINUTE) - date1.get(Calendar.MINUTE)); // min
         if (timeDiff[4] < 0) {
             timeDiff[4] += 60;
             timeDiff[3] = -1;
         }
-        return Long.valueOf(Arrays.toString(timeDiff));
+        String str = String.valueOf(timeDiff[4]);
+        return str;
+
     }
 
-    public static long cSec( Calendar date1, Calendar date2) {
+    public static String cSec( Calendar date1, Calendar date2) {
         long[] timeDiff = new long[6];
         timeDiff[5] += (date2.get(Calendar.SECOND) - date1.get(Calendar.SECOND)) ; // sec
         if (timeDiff[5] < 0) {
             timeDiff[5] += 60;
             timeDiff[4] = -1;
         }
-        return Long.valueOf(Arrays.toString(timeDiff));
+
+        String str = String.valueOf(timeDiff[5]);
+        return str;
+
     }
 
-    public static long cMilSec( Calendar date1, Calendar date2) {
+    public static String cMilSec( Calendar date1, Calendar date2) {
         long[] timeDiff = new long[7];
         timeDiff[6] = (date2.get(Calendar.MILLISECOND) - date1.get(Calendar.MILLISECOND)) ; // ms
         if (timeDiff[6] < 0) {
             timeDiff[6] += 1000;
             timeDiff[5] = -1;
         }
-        return Long.valueOf(Arrays.toString(timeDiff));
+        String str = String.valueOf(timeDiff[6]);
+        return str;
+
     }
 
     public static void main(String[] args) {
