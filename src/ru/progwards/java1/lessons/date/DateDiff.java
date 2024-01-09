@@ -57,13 +57,13 @@ public class DateDiff {
 
         long milliseconds = average % 1000;
         average /= 1000;
-        long seconds = average % 60;
+        long seconds = (average % 60)-1;
         average /= 60;
-        long minutes = average % 60;
+        long minutes = (average % 60)-1;
         average /= 60;
-        long hours = average % 24;
+        long hours = (average % 24)-1;
         average /= 24;
-        long days = average % 30;
+        long days = (average % 30)-1;
         average /= 30;
         long months = average % 12;
         long years = average / 12;
