@@ -42,7 +42,7 @@ public class DateDiff {
         long milsec = Long.parseLong(cMilSec(toCalendar(now), toCalendar(birthday)));
         long hours = Long.parseLong(cHours(toCalendar(now), toCalendar(birthday)));
         System.out.println("До дня рождения " + month + " месяцев, " + days + " дней, " + hours + " часов, " + min + " минут, " +
-                sec  + " секунд, " + milsec + "  миллисекунд");
+                sec  + " секунд, " + milsec + " миллисекунд");
     }
 
     public static void averageTime(Date[] events) {
