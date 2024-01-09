@@ -15,7 +15,7 @@ public class DateDiff {
 
     public static void timeBetween(Date date1, Date date2) {
 
-        long year = cYear(toCalendar(date1), toCalendar(date2));
+        long year = cYear(toCalendar(date1), toCalendar(date2)) - 1;
         String month =cMonths(toCalendar(date1), toCalendar(date2));
         long days = Long.parseLong(cDays(toCalendar(date1), toCalendar(date2)));
         long hours = Long.parseLong(cHours(toCalendar(date1), toCalendar(date2)));
