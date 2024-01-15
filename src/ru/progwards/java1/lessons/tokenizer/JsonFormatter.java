@@ -4,5 +4,6 @@ public class JsonFormatter {
     public static String format(String json) {
 
 
+        return json;
     }
 }
