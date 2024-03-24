@@ -15,25 +15,30 @@ public class JsonFormatter {
                 formattedJson.append(currentChar);
             } else {
                 if (!inString) {
+
                     if (currentChar == '{' || currentChar == '[') {
                         indentLevel++;
 
                         formattedJson.append(currentChar);
                         formattedJson.append("\n");
                         formattedJson.append(getIndent(indentLevel));
-                    } else if (currentChar == '}' || currentChar == ']') {
+                    }
+                    else if (currentChar == '}' || currentChar == ']') {
                         indentLevel--;
                         formattedJson.append("\n");
                         formattedJson.append(getIndent(indentLevel));
                         formattedJson.append(currentChar);
-                    } else if (currentChar == ',') {
+                    }
+                    else if (currentChar == ',') {
                         formattedJson.append(currentChar);
                         formattedJson.append("\n");
                         formattedJson.append(getIndent(indentLevel));
-                    } else {
+                    }
+                    else {
                         formattedJson.append(currentChar);
                     }
-                } else {
+                }
+                else {
                     formattedJson.append(currentChar);
                 }
             }
@@ -51,7 +56,7 @@ public class JsonFormatter {
     }
 
     public static void main(String[] args) {
-        String json = "{\"name\":\"John\",\"age\":30,\"city\":\"New York\",\"children\":[{\"name\":\"Alice\",\"age\":5},{\"name\":\"Bob\",\"age\":7}]}";
+        String json = "{\"name\":\"Dima\",\"age\":30,\"city\":\"New York\",\"children\":[{\"name\":\"Idinano\",\"age\":5},{\"name\":\"Bob\",\"age\":7}]}";
         System.out.println(format(json));
     }
 }
