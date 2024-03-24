@@ -54,4 +54,3 @@ public class JsonFormatter {
         System.out.println(format(json));
     }
 }
-
