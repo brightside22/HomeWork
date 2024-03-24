@@ -49,3 +49,4 @@ public class JsonFormatter {
         return indent.toString();
     }
 }
+
