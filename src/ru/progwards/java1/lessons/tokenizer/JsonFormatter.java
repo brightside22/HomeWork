@@ -1,59 +1,77 @@
 package ru.progwards.java1.lessons.tokenizer;
 
+
 public class JsonFormatter {
     public static String format(String json) {
         StringBuilder formattedJson = new StringBuilder();
         int indentLevel = 0;
-        boolean inString = false;
-        char currentChar;
+        boolean Quotes = false;
+        boolean Escape = false;
 
-        for (int i = 0; i < json.length(); i++) {
-            currentChar = json.charAt(i);
-
-            if (currentChar == '"') {
-                inString = !inString;
-                formattedJson.append(currentChar);
-            } else {
-                if (!inString) {
-
-                    if (currentChar == '{' || currentChar == '[') {
+        for (char charFromJson : json.toCharArray()) {
+            switch (charFromJson) {
+                case '"':
+                    if (!Escape) {
+                        Quotes = !Quotes;
+                    }
+                    formattedJson.append(charFromJson);
+                    break;
+                case '\\':
+                    Escape = !Escape;
+                    formattedJson.append(charFromJson);
+                    break;
+                case '{':
+                case '[':
+                    formattedJson.append(charFromJson);
+                    if (!Quotes) {
+                        formattedJson.append('\n');
                         indentLevel++;
-
-                        formattedJson.append(currentChar);
-                        formattedJson.append("\n");
-                        formattedJson.append(getIndent(indentLevel));
+                        appendIndentation(formattedJson, indentLevel);
                     }
-                    else if (currentChar == '}' || currentChar == ']') {
+                    break;
+                case '}':
+                case ']':
+                    if (!Quotes) {
+                        formattedJson.append('\n');
                         indentLevel--;
-                        formattedJson.append("\n");
-                        formattedJson.append(getIndent(indentLevel));
-                        formattedJson.append(currentChar);
+                        appendIndentation(formattedJson, indentLevel);
+                        formattedJson.append(charFromJson);
+                    } else {
+                        formattedJson.append(charFromJson);
                     }
-                    else if (currentChar == ',') {
-                        formattedJson.append(currentChar);
-                        formattedJson.append("\n");
-                        formattedJson.append(getIndent(indentLevel));
+                    break;
+                case ',':
+                    formattedJson.append(charFromJson);
+                    if (!Quotes) {
+                        formattedJson.append('\n');
+                        appendIndentation(formattedJson, indentLevel);
                     }
-                    else {
-                        formattedJson.append(currentChar);
+                    break;
+                case ':':
+                    if (Quotes) {
+                        formattedJson.append(charFromJson);
+                    } else {
+                        formattedJson.append(": ");
                     }
-                }
-                else {
-                    formattedJson.append(currentChar);
-                }
+                    break;
+                default:
+                    formattedJson.append(charFromJson);
+                    break;
+            }
+            if (charFromJson != '\\') {
+                Escape = false;
             }
         }
 
         return formattedJson.toString();
     }
 
-    private static String getIndent(int indentLevel) {
-        StringBuilder indent = new StringBuilder();
-        for (int i = 0; i < indentLevel; i++) {
-            indent.append("  ");
+    private static void appendIndentation(StringBuilder sb, int level) {
+        for (int i = 0; i < level; i++) {
+            sb.append("  "); // 2 spaces for each level
         }
-        return indent.toString();
     }
+
 
     public static void main(String[] args) {
         String json = "{\"name\":\"Dima\",\"age\":30,\"city\":\"New York\",\"children\":[{\"name\":\"Idinano\",\"age\":5},{\"name\":\"Bob\",\"age\":7}]}";
