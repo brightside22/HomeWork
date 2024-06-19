@@ -12,7 +12,7 @@ public class JsonFormatter {
             switch (charFromJson) {
                 case '"':
                     if (!Escape) {
-                        Quotes = !Quotes;
+                        Quotes =! Quotes;
                     }
                     formattedJson.append(charFromJson);
                     break;
@@ -68,7 +68,7 @@ public class JsonFormatter {
 
     private static void appendIndentation(StringBuilder sb, int level) {
         for (int i = 0; i < level; i++) {
-            sb.append("  "); // 2 spaces for each level
+            sb.append("  "); // !2 sp!
         }
     }
 
