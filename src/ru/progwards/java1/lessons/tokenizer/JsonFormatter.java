@@ -77,5 +77,5 @@ public class JsonFormatter {
         String json = "{\"name\":\"Dima\",\"age\":30,\"city\":\"New York\",\"children\":[{\"name\":\"Idinano\",\"age\":5},{\"name\":\"Bob\",\"age\":7}]}";
         System.out.println(format(json));
     }
-}
 
+}
